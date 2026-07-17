@@ -1,0 +1,4 @@
+node_modules/
+package-lock.json
+ROADMAP_BOT_VALUATION_MVP.md
+tests/fixtures/invalid-companies.json

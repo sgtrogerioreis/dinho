@@ -1,0 +1,9 @@
+const VALUATION_STATUS = Object.freeze({
+  UNDERVALUED: 'UNDERVALUED',
+  FAIRLY_VALUED: 'FAIRLY_VALUED',
+  OVERVALUED: 'OVERVALUED',
+});
+
+module.exports = {
+  VALUATION_STATUS,
+};

@@ -1,0 +1,11 @@
+{
+  "PETR4": {
+    "ticker": "PETR4",
+    "name": "Petroleo Brasileiro S.A. - Petrobras",
+    "price": 34.5,
+    "eps": 6.82,
+    "annualDividend": 3.42,
+    "fcf": 110000000000,
+    "sharesOutstanding": 13044000000
+  }
+}

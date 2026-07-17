@@ -1,0 +1,24 @@
+{
+  "PETR4": {
+    "ticker": "PETR4",
+    "name": "Petroleo Brasileiro S.A. - Petrobras",
+    "price": 34.5,
+    "eps": 6.82,
+    "bookValuePerShare": 42.31,
+    "annualDividend": 3.42,
+    "fcf": 110000000000,
+    "sharesOutstanding": 13044000000,
+    "netDebt": 210000000000
+  },
+  "VALE3": {
+    "ticker": "VALE3",
+    "name": "Vale S.A.",
+    "price": 61.2,
+    "eps": 12.35,
+    "bookValuePerShare": 47.8,
+    "annualDividend": 5.1,
+    "fcf": 54800000000,
+    "sharesOutstanding": 4194000000,
+    "netDebt": 72600000000
+  }
+}
