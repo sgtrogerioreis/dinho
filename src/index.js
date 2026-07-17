@@ -8,6 +8,7 @@ const { formatGrahamResponse } = require('./discord/formatters/grahamResponse');
 const { createInteractionHandler } = require('./discord/handleInteraction');
 const { createCompanyProvider } = require('./providers');
 const { calculateGrahamValuationByTicker } = require('./services');
+const { serializeError } = require('./utils/errorDetails');
 
 async function bootstrap() {
   const discordConfig = config.discord.getDiscordRuntimeConfig();
@@ -31,7 +32,7 @@ async function bootstrap() {
 }
 
 bootstrap().catch((error) => {
-  console.error('Failed to initialize DINHO.', error);
+  console.error('Failed to initialize DINHO.', serializeError(error));
   process.exitCode = 1;
 });
 

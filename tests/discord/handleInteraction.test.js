@@ -1,9 +1,11 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
 
+const { AccessDeniedError } = require('../../src/errors/accessDeniedError');
 const { ConfigurationError } = require('../../src/errors/configurationError');
 const { InvalidTickerError } = require('../../src/errors/invalidTickerError');
 const { NotFoundError } = require('../../src/errors/notFoundError');
+const { RateLimitError } = require('../../src/errors/rateLimitError');
 const { createInteractionHandler } = require('../../src/discord/handleInteraction');
 
 test('interaction handler reads the command and replies with the formatted result', async () => {
@@ -45,7 +47,7 @@ test('interaction handler maps ticker not found errors to a friendly message', a
 
   await handleInteraction(interaction);
 
-  assert.equal(interaction.replyCalls[0].content, 'Não encontrei dados para o ticker informado.');
+  assert.equal(interaction.replyCalls[0].content, 'Nao encontrei dados para o ticker informado.');
 });
 
 test('interaction handler maps invalid ticker errors to a friendly message', async () => {
@@ -65,7 +67,55 @@ test('interaction handler maps invalid ticker errors to a friendly message', asy
 
   await handleInteraction(interaction);
 
-  assert.equal(interaction.replyCalls[0].content, 'Informe um ticker válido, como PETR4.');
+  assert.equal(interaction.replyCalls[0].content, 'Informe um ticker valido, como PETR4.');
+});
+
+test('interaction handler maps temporary API failures to a private message', async () => {
+  const interaction = createFakeInteraction();
+  const handleInteraction = createInteractionHandler(
+    new Map([
+      [
+        'graham',
+        {
+          async execute() {
+            throw new RateLimitError('busy');
+          },
+        },
+      ],
+    ]),
+  );
+
+  await handleInteraction(interaction);
+
+  assert.equal(
+    interaction.replyCalls[0].content,
+    'A BRAPI esta indisponivel no momento. Tente novamente em instantes.',
+  );
+  assert.equal(interaction.replyCalls[0].flags, 64);
+});
+
+test('interaction handler maps access denied errors to a friendly private message', async () => {
+  const interaction = createFakeInteraction();
+  const handleInteraction = createInteractionHandler(
+    new Map([
+      [
+        'graham',
+        {
+          async execute() {
+            throw new AccessDeniedError('blocked');
+          },
+        },
+      ],
+    ]),
+  );
+
+  await handleInteraction(interaction);
+
+  assert.equal(
+    interaction.replyCalls[0].content,
+    'Nao foi possivel acessar os dados fundamentalistas deste ativo na fonte atual.',
+  );
+  assert.equal(interaction.replyCalls[0].flags, 64);
 });
 
 test('interaction handler maps unexpected errors without exposing technical details', async () => {
@@ -85,7 +135,7 @@ test('interaction handler maps unexpected errors without exposing technical deta
 
   await handleInteraction(interaction);
 
-  assert.equal(interaction.replyCalls[0].content, 'Não foi possível concluir o cálculo agora.');
+  assert.equal(interaction.replyCalls[0].content, 'Nao foi possivel concluir o calculo agora.');
 });
 
 test('interaction handler maps configuration errors to a private message', async () => {
@@ -107,7 +157,7 @@ test('interaction handler maps configuration errors to a private message', async
 
   assert.equal(
     interaction.replyCalls[0].content,
-    'O DINHO não está configurado corretamente no momento.',
+    'O provedor de dados nao esta disponivel corretamente no momento.',
   );
   assert.equal(interaction.replyCalls[0].flags, 64);
 });

@@ -1,5 +1,6 @@
 const { mapInteractionError } = require('./mapInteractionError');
 const { safeReply } = require('./safeReply');
+const { serializeError } = require('../utils/errorDetails');
 
 function createInteractionHandler(commandRegistry) {
   return async function handleInteraction(interaction) {
@@ -26,7 +27,7 @@ function createInteractionHandler(commandRegistry) {
 function logInteractionError(interaction, error) {
   console.error(
     `[discord] command "${interaction.commandName}" failed for ticker option "${readTickerOption(interaction)}".`,
-    error,
+    serializeError(error),
   );
 }
 

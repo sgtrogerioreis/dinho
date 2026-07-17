@@ -1,4 +1,6 @@
 const { ConfigurationError } = require('../errors/configurationError');
+const { MissingCredentialError } = require('../errors/missingCredentialError');
+const { ApiCompanyProvider } = require('./apiProvider');
 const { LocalCompanyProvider } = require('./localProvider');
 
 function createCompanyProvider(config) {
@@ -8,7 +10,23 @@ function createCompanyProvider(config) {
 
   if (config.driver === 'local') {
     return new LocalCompanyProvider({
-      filePath: config.filePath,
+      filePath: config.local.filePath,
+    });
+  }
+
+  if (config.driver === 'api') {
+    if (!config.api || typeof config.api !== 'object') {
+      throw new ConfigurationError('API provider configuration is required.');
+    }
+
+    if (!config.api.apiKey) {
+      throw new MissingCredentialError('BRAPI_API_KEY is required when PROVIDER=api.');
+    }
+
+    return new ApiCompanyProvider({
+      baseUrl: config.api.baseUrl,
+      apiKey: config.api.apiKey,
+      timeoutMs: config.api.timeoutMs,
     });
   }
 
