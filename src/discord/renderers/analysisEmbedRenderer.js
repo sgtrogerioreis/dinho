@@ -1,5 +1,6 @@
 const { EmbedBuilder } = require('discord.js');
 const { ANALYSIS_STATUS } = require('../../analysis/analysisStatus');
+const { NullLogoProvider } = require('../../branding/logoProvider');
 
 const CURRENCY_FORMATTER = new Intl.NumberFormat('pt-BR', {
   style: 'currency',
@@ -14,10 +15,10 @@ const PERCENTAGE_FORMATTER = new Intl.NumberFormat('pt-BR', {
 });
 
 const STATUS_LABELS = Object.freeze({
-  [ANALYSIS_STATUS.UNDERVALUED]: '🟢 Subavaliada',
-  [ANALYSIS_STATUS.FAIR_VALUE]: '🟡 Próxima do preço justo',
-  [ANALYSIS_STATUS.OVERVALUED]: '🔴 Acima do preço justo',
-  [ANALYSIS_STATUS.NOT_APPLICABLE]: '⚪ Graham não aplicável',
+  [ANALYSIS_STATUS.UNDERVALUED]: '🟢 SUBAVALIADA',
+  [ANALYSIS_STATUS.FAIR_VALUE]: '🟡 PREÇO JUSTO',
+  [ANALYSIS_STATUS.OVERVALUED]: '🔴 SOBREAVALIADA',
+  [ANALYSIS_STATUS.NOT_APPLICABLE]: '⚪ NÃO APLICÁVEL',
   [ANALYSIS_STATUS.ERROR]: 'Erro',
 });
 
@@ -30,61 +31,91 @@ const STATUS_COLORS = Object.freeze({
 });
 
 class AnalysisEmbedRenderer {
+  constructor(options = {}) {
+    this.logoProvider = options.logoProvider || new NullLogoProvider();
+  }
+
   render(result, options = {}) {
     const consultedAt = options.consultedAt || new Date();
-    const embed = new EmbedBuilder()
-      .setTitle(resolveTitle(result.method))
-      .setDescription(resolveDescription(result))
-      .setColor(STATUS_COLORS[result.status] || STATUS_COLORS[ANALYSIS_STATUS.ERROR])
-      .addFields(
-        {
-          name: '🏢 Empresa',
-          value: `${formatCompanyName(result.companyName)}\n${result.ticker || 'Ticker nao informado'}`,
-          inline: false,
-        },
-        {
-          name: '💰 Preço Atual',
-          value: bold(formatCurrency(result.currentPrice)),
-          inline: true,
-        },
-        {
-          name: '🎯 Preço Justo',
-          value: formatNullableCurrency(result.fairPrice),
-          inline: true,
-        },
-        {
-          name: '📈 Potencial',
-          value: formatPotential(result),
-          inline: true,
-        },
-        {
-          name: 'Status',
-          value: formatStatus(result),
-          inline: false,
-        },
-        {
-          name: '📊 Indicadores',
-          value: formatIndicators(result),
-          inline: true,
-        },
-        {
-          name: '📅 Dados Utilizados',
-          value: formatDataReference(result, consultedAt),
-          inline: true,
-        },
-        {
-          name: 'Observacao',
-          value: formatObservation(result),
-          inline: false,
-        },
-      )
-      .setFooter({
-        text: 'O método Graham utiliza empresas com LPA e VPA positivos para estimar um preço justo teórico.',
-      });
+    const embed = this.createBaseEmbed(result);
+    const logoUrl = resolveLogoUrl(this.logoProvider, result);
+
+    if (logoUrl) {
+      embed.setThumbnail(logoUrl);
+    }
+
+    embed.addFields(...buildFields(result, consultedAt)).setFooter({
+      text: 'Os cálculos utilizam fundamentos públicos da CVM processados pela BolsAI. O método Benjamin Graham não constitui recomendação de investimento.',
+    });
 
     return {
       embeds: [embed],
     };
+  }
+
+  createBaseEmbed(result) {
+    return new EmbedBuilder()
+      .setTitle(resolveTitle(result.method))
+      .setDescription(resolveDescription(result))
+      .setColor(STATUS_COLORS[result.status] || STATUS_COLORS[ANALYSIS_STATUS.ERROR]);
+  }
+}
+
+function buildFields(result, consultedAt) {
+  return [
+    {
+      name: '🏢 Empresa',
+      value: `${formatCompanyName(result.companyName)}\n${result.ticker || 'Ticker nao informado'}`,
+      inline: false,
+    },
+    {
+      name: '💰 Preço Atual',
+      value: bold(formatCurrency(result.currentPrice)),
+      inline: true,
+    },
+    {
+      name: '🎯 Preço Justo',
+      value: bold(formatNullableCurrency(result.fairPrice)),
+      inline: true,
+    },
+    {
+      name: '📈 Potencial de Valorização',
+      value: bold(formatPotential(result)),
+      inline: true,
+    },
+    {
+      name: 'Status',
+      value: formatStatus(result),
+      inline: false,
+    },
+    {
+      name: 'Resumo Executivo',
+      value: formatExecutiveSummary(result),
+      inline: false,
+    },
+    {
+      name: '📊 Indicadores',
+      value: formatIndicators(result),
+      inline: true,
+    },
+    {
+      name: '🔎 Confiabilidade dos Dados',
+      value: formatDataReliability(result),
+      inline: true,
+    },
+    {
+      name: '📅 Dados Utilizados',
+      value: formatDataReference(result, consultedAt),
+      inline: false,
+    },
+  ];
+}
+
+function resolveLogoUrl(logoProvider, result) {
+  try {
+    return logoProvider.getLogoUrl(result);
+  } catch {
+    return null;
   }
 }
 
@@ -98,10 +129,10 @@ function resolveTitle(method) {
 
 function resolveDescription(result) {
   if (result.status === ANALYSIS_STATUS.NOT_APPLICABLE) {
-    return 'Avaliação de preço justo utilizando a metodologia clássica de Benjamin Graham.';
+    return 'Preço justo baseado na metodologia clássica de Benjamin Graham.';
   }
 
-  return 'Avaliação de preço justo utilizando a metodologia clássica de Benjamin Graham.';
+  return 'Preço justo baseado na metodologia clássica de Benjamin Graham.';
 }
 
 function formatStatus(result) {
@@ -153,11 +184,39 @@ function formatPercentage(value) {
 
 function formatIndicators(result) {
   return [
+    `🛡️ Margem de Segurança: ${formatNullablePercentage(result.marginOfSafety)}`,
     `LPA: ${formatNumber(result.inputs.eps)}`,
     `VPA: ${formatNumber(result.inputs.bookValuePerShare)}`,
-    `Margem: ${formatNullablePercentage(result.marginOfSafety)}`,
     `Graham: ${formatNullableCurrency(result.fairPrice)}`,
   ].join('\n');
+}
+
+function formatExecutiveSummary(result) {
+  if (result.status === ANALYSIS_STATUS.UNDERVALUED) {
+    return '🟢 A ação negocia abaixo do preço justo calculado por Graham.';
+  }
+
+  if (result.status === ANALYSIS_STATUS.FAIR_VALUE) {
+    return '🟡 A ação negocia próxima do preço justo calculado por Graham.';
+  }
+
+  if (result.status === ANALYSIS_STATUS.OVERVALUED) {
+    return '🔴 A ação negocia acima do preço justo calculado por Graham.';
+  }
+
+  if (result.status === ANALYSIS_STATUS.NOT_APPLICABLE) {
+    return '⚪ O método Graham não é aplicável devido aos fundamentos atuais.';
+  }
+
+  return 'Não foi possível concluir a análise.';
+}
+
+function formatDataReliability(result) {
+  if (result.status === ANALYSIS_STATUS.NOT_APPLICABLE) {
+    return ['⚪ Não aplicável', 'LPA e/ou VPA não positivos.'].join('\n');
+  }
+
+  return ['🟢 Alta', 'Dados necessários encontrados.', 'Sem estimativas.'].join('\n');
 }
 
 function formatDataReference(result, consultedAt) {
@@ -169,17 +228,15 @@ function formatDataReference(result, consultedAt) {
   ].join('\n');
 }
 
-function formatObservation(result) {
-  if (result.status === ANALYSIS_STATUS.NOT_APPLICABLE) {
-    return 'Empresa apresenta LPA e/ou VPA não positivos.';
-  }
-
-  return 'Margem de segurança e potencial de valorização são indicadores diferentes.';
-}
-
 function formatCompanyName(value) {
   if (!value) {
     return 'Empresa não informada';
+  }
+
+  const knownName = resolveKnownCompanyName(value);
+
+  if (knownName) {
+    return knownName;
   }
 
   const normalized = value
@@ -189,6 +246,24 @@ function formatCompanyName(value) {
     .trim();
 
   return normalized || value;
+}
+
+function resolveKnownCompanyName(value) {
+  const upperValue = value.toUpperCase();
+  const aliases = [
+    ['PETROBRAS', 'PETROBRAS'],
+    ['PETRÓLEO BRASILEIRO', 'PETROBRAS'],
+    ['PETROLEO BRASILEIRO', 'PETROBRAS'],
+    ['VALE', 'VALE'],
+    ['WEG', 'WEG'],
+    ['ITAÚ', 'ITAÚ'],
+    ['ITAU', 'ITAÚ'],
+    ['COSAN', 'COSAN'],
+  ];
+
+  const alias = aliases.find(([needle]) => upperValue.includes(needle));
+
+  return alias ? alias[1] : null;
 }
 
 function bold(value) {
@@ -247,4 +322,8 @@ module.exports = {
   formatNumber,
   formatPotential,
   formatReferenceDate,
+  formatCompanyName,
+  formatDataReliability,
+  formatExecutiveSummary,
+  resolveLogoUrl,
 };

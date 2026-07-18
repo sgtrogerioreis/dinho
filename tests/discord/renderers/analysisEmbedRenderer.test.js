@@ -3,17 +3,21 @@ const assert = require('node:assert/strict');
 
 const { ANALYSIS_STATUS } = require('../../../src/analysis/analysisStatus');
 const { AnalysisResult } = require('../../../src/analysis/analysisResult');
+const { NullLogoProvider } = require('../../../src/branding/logoProvider');
 const {
   AnalysisEmbedRenderer,
   STATUS_COLORS,
+  formatCompanyName,
   formatConsultedAt,
+  formatDataReliability,
+  formatExecutiveSummary,
   formatPotential,
   formatReferenceDate,
 } = require('../../../src/discord/renderers/analysisEmbedRenderer');
 
 const CONSULTED_AT = new Date('2026-07-18T17:26:00.000Z');
 
-test('AnalysisEmbedRenderer renders UNDERVALUED as a professional Graham report', () => {
+test('AnalysisEmbedRenderer renders UNDERVALUED as a release-candidate Graham report', () => {
   const embed = render(
     new AnalysisResult({
       method: 'GRAHAM',
@@ -35,7 +39,7 @@ test('AnalysisEmbedRenderer renders UNDERVALUED as a professional Graham report'
   assert.equal(embed.title, '🧮 Benjamin Graham');
   assert.equal(
     embed.description,
-    'Avaliação de preço justo utilizando a metodologia clássica de Benjamin Graham.',
+    'Preço justo baseado na metodologia clássica de Benjamin Graham.',
   );
   assert.equal(embed.color, STATUS_COLORS.UNDERVALUED);
   assert.deepEqual(
@@ -44,46 +48,49 @@ test('AnalysisEmbedRenderer renders UNDERVALUED as a professional Graham report'
       '🏢 Empresa',
       '💰 Preço Atual',
       '🎯 Preço Justo',
-      '📈 Potencial',
+      '📈 Potencial de Valorização',
       'Status',
+      'Resumo Executivo',
       '📊 Indicadores',
+      '🔎 Confiabilidade dos Dados',
       '📅 Dados Utilizados',
-      'Observacao',
     ],
   );
-  assert.equal(field(embed, '🏢 Empresa').value, 'PETRÓLEO BRASILEIRO\nPETR4');
-  assert.equal(field(embed, '💰 Preço Atual').value, '**R$ 40,90**');
-  assert.equal(field(embed, '🎯 Preço Justo').value, 'R$ 80,56');
-  assert.equal(field(embed, '📈 Potencial').value, '🟢 +96,96%');
-  assert.equal(field(embed, 'Status').value, '🟢 Subavaliada');
+  assert.equal(field(embed, '🏢 Empresa').value, 'PETROBRAS\nPETR4');
+  assert.equal(field(embed, '💰 Preço Atual').value, `**R$\u00a040,90**`);
+  assert.equal(field(embed, '🎯 Preço Justo').value, `**R$\u00a080,56**`);
+  assert.equal(field(embed, '📈 Potencial de Valorização').value, '**🟢 +96,96%**');
+  assert.equal(field(embed, 'Status').value, '🟢 SUBAVALIADA');
+  assert.equal(
+    field(embed, 'Resumo Executivo').value,
+    '🟢 A ação negocia abaixo do preço justo calculado por Graham.',
+  );
   assert.equal(
     field(embed, '📊 Indicadores').value,
-    ['LPA: 8,35', 'VPA: 34,54', 'Margem: 49,23%', 'Graham: R$ 80,56'].join('\n'),
+    [`🛡️ Margem de Segurança: 49,23%`, 'LPA: 8,35', 'VPA: 34,54', `Graham: R$\u00a080,56`].join(
+      '\n',
+    ),
+  );
+  assert.equal(
+    field(embed, '🔎 Confiabilidade dos Dados').value,
+    ['🟢 Alta', 'Dados necessários encontrados.', 'Sem estimativas.'].join('\n'),
   );
   assert.equal(
     field(embed, '📅 Dados Utilizados').value,
     [
-      'Preço: R$ 40,90',
+      `Preço: R$\u00a040,90`,
       'Fundamentos: 31/03/2026',
       'Consulta: 18/07/2026 às 14:26',
       'Fonte: BolsAI',
     ].join('\n'),
   );
   assert.equal(
-    field(embed, 'Observacao').value,
-    'Margem de segurança e potencial de valorização são indicadores diferentes.',
-  );
-  assert.equal(
     embed.footer.text,
-    'O método Graham utiliza empresas com LPA e VPA positivos para estimar um preço justo teórico.',
-  );
-  assert.equal(
-    embed.fields.some((item) => item.name === 'Data da Cotacao'),
-    false,
+    'Os cálculos utilizam fundamentos públicos da CVM processados pela BolsAI. O método Benjamin Graham não constitui recomendação de investimento.',
   );
 });
 
-test('AnalysisEmbedRenderer renders OVERVALUED with negative potential', () => {
+test('AnalysisEmbedRenderer renders OVERVALUED with visual status and negative potential', () => {
   const embed = render(
     new AnalysisResult({
       method: 'GRAHAM',
@@ -103,11 +110,15 @@ test('AnalysisEmbedRenderer renders OVERVALUED with negative potential', () => {
   );
 
   assert.equal(embed.color, STATUS_COLORS.OVERVALUED);
-  assert.equal(field(embed, '📈 Potencial').value, '🔴 -72,61%');
-  assert.equal(field(embed, 'Status').value, '🔴 Acima do preço justo');
+  assert.equal(field(embed, '📈 Potencial de Valorização').value, '**🔴 -72,61%**');
+  assert.equal(field(embed, 'Status').value, '🔴 SOBREAVALIADA');
+  assert.equal(
+    field(embed, 'Resumo Executivo').value,
+    '🔴 A ação negocia acima do preço justo calculado por Graham.',
+  );
 });
 
-test('AnalysisEmbedRenderer renders FAIR_VALUE with neutral status', () => {
+test('AnalysisEmbedRenderer renders FAIR_VALUE with neutral visual status', () => {
   const embed = render(
     new AnalysisResult({
       method: 'GRAHAM',
@@ -127,8 +138,12 @@ test('AnalysisEmbedRenderer renders FAIR_VALUE with neutral status', () => {
   );
 
   assert.equal(embed.color, STATUS_COLORS.FAIR_VALUE);
-  assert.equal(field(embed, '📈 Potencial').value, '🟢 +2,00%');
-  assert.equal(field(embed, 'Status').value, '🟡 Próxima do preço justo');
+  assert.equal(field(embed, '📈 Potencial de Valorização').value, '**🟢 +2,00%**');
+  assert.equal(field(embed, 'Status').value, '🟡 PREÇO JUSTO');
+  assert.equal(
+    field(embed, 'Resumo Executivo').value,
+    '🟡 A ação negocia próxima do preço justo calculado por Graham.',
+  );
 });
 
 test('AnalysisEmbedRenderer renders NOT_APPLICABLE without financial projections', () => {
@@ -151,28 +166,83 @@ test('AnalysisEmbedRenderer renders NOT_APPLICABLE without financial projections
   );
 
   assert.equal(embed.color, STATUS_COLORS.NOT_APPLICABLE);
-  assert.equal(field(embed, '🎯 Preço Justo').value, '—');
-  assert.equal(field(embed, '📈 Potencial').value, '—');
-  assert.equal(field(embed, 'Status').value, '⚪ Graham não aplicável');
+  assert.equal(field(embed, '🎯 Preço Justo').value, '**—**');
+  assert.equal(field(embed, '📈 Potencial de Valorização').value, '**—**');
+  assert.equal(field(embed, 'Status').value, '⚪ NÃO APLICÁVEL');
+  assert.equal(
+    field(embed, 'Resumo Executivo').value,
+    '⚪ O método Graham não é aplicável devido aos fundamentos atuais.',
+  );
   assert.equal(
     field(embed, '📊 Indicadores').value,
-    ['LPA: -2,40', 'VPA: 0,88', 'Margem: —', 'Graham: —'].join('\n'),
+    ['🛡️ Margem de Segurança: —', 'LPA: -2,40', 'VPA: 0,88', 'Graham: —'].join('\n'),
   );
-  assert.equal(field(embed, 'Observacao').value, 'Empresa apresenta LPA e/ou VPA não positivos.');
+  assert.equal(
+    field(embed, '🔎 Confiabilidade dos Dados').value,
+    ['⚪ Não aplicável', 'LPA e/ou VPA não positivos.'].join('\n'),
+  );
 });
 
-test('AnalysisEmbedRenderer formats dates and potential values', () => {
+test('AnalysisEmbedRenderer uses optional thumbnails without depending on external defaults', () => {
+  const result = new AnalysisResult({
+    method: 'GRAHAM',
+    ticker: 'PETR4',
+    companyName: 'PETROBRAS',
+    currentPrice: 40.9,
+    fairPrice: 80.55,
+    marginOfSafety: 49.22,
+    status: ANALYSIS_STATUS.UNDERVALUED,
+    referenceDate: '2026-03-31',
+    provider: 'BolsAI',
+    inputs: {
+      eps: 8.35,
+      bookValuePerShare: 34.54,
+    },
+  });
+
+  const withoutLogo = render(result);
+  const withLogo = render(result, {
+    logoProvider: {
+      getLogoUrl() {
+        return 'https://assets.example.test/petr4.png';
+      },
+    },
+  });
+  const failingLogo = render(result, {
+    logoProvider: {
+      getLogoUrl() {
+        throw new Error('logo unavailable');
+      },
+    },
+  });
+
+  assert.equal(withoutLogo.thumbnail, undefined);
+  assert.equal(withLogo.thumbnail.url, 'https://assets.example.test/petr4.png');
+  assert.equal(failingLogo.thumbnail, undefined);
+  assert.equal(new NullLogoProvider().getLogoUrl(result), null);
+});
+
+test('AnalysisEmbedRenderer formats names, dates, potential, summaries and reliability', () => {
+  assert.equal(formatCompanyName('PETRÓLEO BRASILEIRO S.A. - PETROBRAS'), 'PETROBRAS');
+  assert.equal(formatCompanyName('VALE S.A.'), 'VALE');
+  assert.equal(formatCompanyName('WEG SA'), 'WEG');
   assert.equal(formatReferenceDate('2026-03-31'), '31/03/2026');
   assert.equal(formatConsultedAt(CONSULTED_AT), '18/07/2026 às 14:26');
   assert.equal(formatPotential({ currentPrice: 40.9, fairPrice: 80.55558639846153 }), '🟢 +96,96%');
   assert.equal(
-    formatPotential({ currentPrice: 43.63, fairPrice: 11.948326242616579 }),
-    '🔴 -72,61%',
+    formatExecutiveSummary({ status: ANALYSIS_STATUS.NOT_APPLICABLE }),
+    '⚪ O método Graham não é aplicável devido aos fundamentos atuais.',
+  );
+  assert.equal(
+    formatDataReliability({ status: ANALYSIS_STATUS.UNDERVALUED }),
+    ['🟢 Alta', 'Dados necessários encontrados.', 'Sem estimativas.'].join('\n'),
   );
 });
 
-function render(result) {
-  return new AnalysisEmbedRenderer()
+function render(result, options = {}) {
+  return new AnalysisEmbedRenderer({
+    logoProvider: options.logoProvider,
+  })
     .render(result, {
       consultedAt: CONSULTED_AT,
     })

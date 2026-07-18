@@ -5,10 +5,10 @@
 ```text
 🧮 Benjamin Graham
 
-Avaliação de preço justo utilizando a metodologia clássica de Benjamin Graham.
+Preço justo baseado na metodologia clássica de Benjamin Graham.
 
 🏢 Empresa
-PETRÓLEO BRASILEIRO
+PETROBRAS
 PETR4
 
 💰 Preço Atual
@@ -17,17 +17,25 @@ R$ 40,90
 🎯 Preço Justo
 R$ 80,56
 
-📈 Potencial
+📈 Potencial de Valorização
 🟢 +96,96%
 
 Status
-🟢 Subavaliada
+🟢 SUBAVALIADA
+
+Resumo Executivo
+🟢 A ação negocia abaixo do preço justo calculado por Graham.
 
 📊 Indicadores
+🛡️ Margem de Segurança: 49,23%
 LPA: 8,35
 VPA: 34,54
-Margem: 49,23%
 Graham: R$ 80,56
+
+🔎 Confiabilidade dos Dados
+🟢 Alta
+Dados necessários encontrados.
+Sem estimativas.
 
 📅 Dados Utilizados
 Preço: R$ 40,90
@@ -35,10 +43,7 @@ Fundamentos: 31/03/2026
 Consulta: 18/07/2026 às 14:26
 Fonte: BolsAI
 
-Observacao
-Margem de segurança e potencial de valorização são indicadores diferentes.
-
-O método Graham utiliza empresas com LPA e VPA positivos para estimar um preço justo teórico.
+Os cálculos utilizam fundamentos públicos da CVM processados pela BolsAI. O método Benjamin Graham não constitui recomendação de investimento.
 ```
 
 ## NOT_APPLICABLE
@@ -46,7 +51,7 @@ O método Graham utiliza empresas com LPA e VPA positivos para estimar um preço
 ```text
 🧮 Benjamin Graham
 
-Avaliação de preço justo utilizando a metodologia clássica de Benjamin Graham.
+Preço justo baseado na metodologia clássica de Benjamin Graham.
 
 🏢 Empresa
 COSAN
@@ -58,17 +63,24 @@ R$ 3,84
 🎯 Preço Justo
 —
 
-📈 Potencial
+📈 Potencial de Valorização
 —
 
 Status
-⚪ Graham não aplicável
+⚪ NÃO APLICÁVEL
+
+Resumo Executivo
+⚪ O método Graham não é aplicável devido aos fundamentos atuais.
 
 📊 Indicadores
+🛡️ Margem de Segurança: —
 LPA: -2,40
 VPA: 0,88
-Margem: —
 Graham: —
+
+🔎 Confiabilidade dos Dados
+⚪ Não aplicável
+LPA e/ou VPA não positivos.
 
 📅 Dados Utilizados
 Preço: R$ 3,84
@@ -76,8 +88,5 @@ Fundamentos: 31/03/2026
 Consulta: 18/07/2026 às 14:26
 Fonte: BolsAI
 
-Observacao
-Empresa apresenta LPA e/ou VPA não positivos.
-
-O método Graham utiliza empresas com LPA e VPA positivos para estimar um preço justo teórico.
+Os cálculos utilizam fundamentos públicos da CVM processados pela BolsAI. O método Benjamin Graham não constitui recomendação de investimento.
 ```
