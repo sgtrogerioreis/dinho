@@ -199,8 +199,12 @@ test('AnalysisEmbedRenderer uses optional local attachment thumbnails', () => {
       bookValuePerShare: 34.54,
     },
   });
+  const resultWithoutLogo = new AnalysisResult({
+    ...result,
+    ticker: 'SEMLOGO3',
+  });
 
-  const withoutLogo = renderPayload(result);
+  const withoutLogo = renderPayload(resultWithoutLogo);
   const withLogo = renderPayload(result, {
     logoProvider: {
       getAttachment() {
