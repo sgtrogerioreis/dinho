@@ -33,7 +33,7 @@ Resumo Executivo
 │ Sem estimativas.             │                                          │
 └──────────────────────────────┴──────────────────────────────────────────┘
 
-Os cálculos utilizam fundamentos públicos da CVM processados pela BolsAI. O método Benjamin Graham não constitui recomendação de investimento.
+Fonte: BolsAI • Dados públicos da CVM • Não constitui recomendação de investimento.
 ```
 
 ## NOT_APPLICABLE
@@ -66,5 +66,5 @@ Resumo Executivo
 │ LPA e/ou VPA não positivos.  │ Consulta: 18/07/2026 às 14:26 | Fonte: BolsAI │
 └──────────────────────────────┴─────────────────────────────────────────┘
 
-Os cálculos utilizam fundamentos públicos da CVM processados pela BolsAI. O método Benjamin Graham não constitui recomendação de investimento.
+Fonte: BolsAI • Dados públicos da CVM • Não constitui recomendação de investimento.
 ```

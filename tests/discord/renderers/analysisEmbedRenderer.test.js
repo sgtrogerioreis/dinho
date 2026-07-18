@@ -52,7 +52,6 @@ test('AnalysisEmbedRenderer renders UNDERVALUED as a release-candidate Graham re
       '🟢 Status',
       '​',
       'Resumo Executivo',
-      '​',
       '🛡️ Margem de Segurança',
       '📊 LPA',
       '🏦 VPA',
@@ -87,7 +86,7 @@ test('AnalysisEmbedRenderer renders UNDERVALUED as a release-candidate Graham re
   );
   assert.equal(
     embed.footer.text,
-    'Os cálculos utilizam fundamentos públicos da CVM processados pela BolsAI. O método Benjamin Graham não constitui recomendação de investimento.',
+    'Fonte: BolsAI • Dados públicos da CVM • Não constitui recomendação de investimento.',
   );
 });
 

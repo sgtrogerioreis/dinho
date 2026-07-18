@@ -51,7 +51,7 @@ class AnalysisEmbedRenderer {
     }
 
     embed.addFields(...buildFields(result, consultedAt)).setFooter({
-      text: 'Os cálculos utilizam fundamentos públicos da CVM processados pela BolsAI. O método Benjamin Graham não constitui recomendação de investimento.',
+      text: 'Fonte: BolsAI • Dados públicos da CVM • Não constitui recomendação de investimento.',
     });
 
     const payload = {
@@ -106,7 +106,6 @@ function buildFields(result, consultedAt) {
       value: formatExecutiveSummary(result),
       inline: false,
     },
-    SPACER_FIELD,
     {
       name: '🛡️ Margem de Segurança',
       value: formatNullablePercentage(result.marginOfSafety),
