@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv').config({ quiet: true });
 
 const { Events } = require('discord.js');
 const config = require('./config');
@@ -8,6 +8,8 @@ const { AnalysisEmbedRenderer } = require('./discord/renderers/analysisEmbedRend
 const { createInteractionHandler } = require('./discord/handleInteraction');
 const { PermissionGuard } = require('./permissions/permissionGuard');
 const { BolsaiGrahamProvider } = require('./providers/bolsai');
+const { registerLifecycleDiagnostics } = require('./runtime/lifecycleDiagnostics');
+const { registerShutdownHandlers } = require('./runtime/shutdownHandlers');
 const { analyzeGrahamByTicker } = require('./services');
 const { serializeError } = require('./utils/errorDetails');
 
@@ -24,6 +26,8 @@ async function bootstrap() {
   const client = createDiscordClient();
   const handleInteraction = createInteractionHandler(commandRegistry);
 
+  registerLifecycleDiagnostics(client);
+
   client.once(Events.ClientReady, () => {
     console.log('DINHO conectado ao Discord.');
   });
@@ -38,30 +42,3 @@ bootstrap().catch((error) => {
   console.error('Failed to initialize DINHO.', serializeError(error));
   process.exitCode = 1;
 });
-
-function registerShutdownHandlers(client) {
-  let hasShutdownStarted = false;
-
-  async function shutdown(signal) {
-    if (hasShutdownStarted) {
-      return;
-    }
-
-    hasShutdownStarted = true;
-    console.log(`Received ${signal}. Shutting down DINHO.`);
-
-    try {
-      client.destroy();
-    } finally {
-      process.exit(0);
-    }
-  }
-
-  process.once('SIGINT', () => {
-    void shutdown('SIGINT');
-  });
-
-  process.once('SIGTERM', () => {
-    void shutdown('SIGTERM');
-  });
-}
