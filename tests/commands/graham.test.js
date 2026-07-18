@@ -2,7 +2,8 @@ const test = require('node:test');
 const assert = require('node:assert/strict');
 
 const { PermissionDeniedError } = require('../../src/errors/permissionDeniedError');
-const { createGrahamCommand, grahamCommandData } = require('../../src/commands/graham');
+const { createGrahamCommand } = require('../../src/commands/graham');
+const { grahamCommandData } = require('../../src/commands/grahamDefinition');
 
 test('graham command definition has the correct name, description and ticker option', () => {
   const payload = grahamCommandData.toJSON();

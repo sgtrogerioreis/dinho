@@ -1,22 +1,15 @@
-const { SlashCommandBuilder } = require('discord.js');
 const { ConfigurationError } = require('../errors/configurationError');
 const { PermissionDeniedError } = require('../errors/permissionDeniedError');
 
-const grahamCommandData = new SlashCommandBuilder()
-  .setName('graham')
-  .setDescription('Calcula o preço justo de uma ação pelo método de Graham.')
-  .addStringOption((option) =>
-    option
-      .setName('ticker')
-      .setDescription('Ticker da ação brasileira, como PETR4.')
-      .setRequired(true),
-  );
+const GRAHAM_COMMAND_NAME = 'graham';
 
 function createGrahamCommand(dependencies) {
   validateDependencies(dependencies);
 
   return {
-    data: grahamCommandData,
+    data: {
+      name: GRAHAM_COMMAND_NAME,
+    },
     async execute(interaction) {
       const startedAt = Date.now();
       const ticker = interaction.options.getString('ticker', true);
@@ -83,6 +76,6 @@ function readUserId(interaction) {
 }
 
 module.exports = {
+  GRAHAM_COMMAND_NAME,
   createGrahamCommand,
-  grahamCommandData,
 };

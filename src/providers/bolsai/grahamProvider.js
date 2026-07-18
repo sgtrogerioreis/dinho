@@ -13,7 +13,12 @@ class BolsaiGrahamProvider {
         baseUrl: options.baseUrl,
         timeoutMs: options.timeoutMs,
       });
-    this.cache = options.cache || new TtlCache({ ttlMs: options.cacheTtlMs || 5 * 60 * 1000 });
+    this.cache =
+      options.cache ||
+      new TtlCache({
+        ttlMs: options.cacheTtlMs || 5 * 60 * 1000,
+        maxEntries: options.cacheMaxEntries || 128,
+      });
   }
 
   async getGrahamInputsByTicker(ticker) {

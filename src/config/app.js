@@ -16,6 +16,7 @@ const appConfig = Object.freeze({
       apiKey: readOptionalEnvironmentVariable('BOLSAI_API_KEY'),
       timeoutMs: 10000,
       cacheTtlMs: 5 * 60 * 1000,
+      cacheMaxEntries: 128,
     }),
   }),
   permissions: Object.freeze({

@@ -1,4 +1,4 @@
-const { createGrahamCommand, grahamCommandData } = require('../commands/graham');
+const { createGrahamCommand } = require('../commands/graham');
 
 function createCommandRegistry(dependencies) {
   const grahamCommand = createGrahamCommand(dependencies);
@@ -7,6 +7,8 @@ function createCommandRegistry(dependencies) {
 }
 
 function getCommandDefinitions() {
+  const { grahamCommandData } = require('../commands/grahamDefinition');
+
   return [grahamCommandData.toJSON()];
 }
 

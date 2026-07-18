@@ -2,25 +2,17 @@ require('dotenv').config({ quiet: true });
 
 const { Events } = require('discord.js');
 const config = require('./config');
-const { createCommandRegistry } = require('./discord/commandRegistry');
 const { createDiscordClient } = require('./discord/createClient');
-const { AnalysisEmbedRenderer } = require('./discord/renderers/analysisEmbedRenderer');
 const { createInteractionHandler } = require('./discord/handleInteraction');
-const { PermissionGuard } = require('./permissions/permissionGuard');
-const { BolsaiGrahamProvider } = require('./providers/bolsai');
 const { registerLifecycleDiagnostics } = require('./runtime/lifecycleDiagnostics');
+const { createProductionCommandRegistry } = require('./runtime/productionCommandRegistry');
 const { registerShutdownHandlers } = require('./runtime/shutdownHandlers');
-const { analyzeGrahamByTicker } = require('./services');
 const { serializeError } = require('./utils/errorDetails');
 
 async function bootstrap() {
   const discordConfig = config.discord.getDiscordRuntimeConfig();
-  const grahamProvider = new BolsaiGrahamProvider(config.app.companyProvider.bolsai);
-  const commandRegistry = createCommandRegistry({
-    analysisRenderer: new AnalysisEmbedRenderer(),
-    analyzeGrahamByTicker,
-    grahamProvider,
-    permissionGuard: new PermissionGuard(config.app.permissions),
+  const commandRegistry = createProductionCommandRegistry({
+    appConfig: config.app,
     logger: console,
   });
   const client = createDiscordClient();
