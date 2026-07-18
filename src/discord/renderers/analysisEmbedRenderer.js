@@ -30,6 +30,12 @@ const STATUS_COLORS = Object.freeze({
   [ANALYSIS_STATUS.ERROR]: 0xe67e22,
 });
 
+const SPACER_FIELD = Object.freeze({
+  name: '\u200B',
+  value: '\u200B',
+  inline: false,
+});
+
 class AnalysisEmbedRenderer {
   constructor(options = {}) {
     this.logoProvider = options.logoProvider || new LogoProvider();
@@ -71,8 +77,8 @@ function buildFields(result, consultedAt) {
   return [
     {
       name: '🏢 Empresa',
-      value: `${formatCompanyName(result.companyName)}\n${result.ticker || 'Ticker nao informado'}`,
-      inline: false,
+      value: formatCompanyCard(result),
+      inline: true,
     },
     {
       name: '💰 Preço Atual',
@@ -85,25 +91,43 @@ function buildFields(result, consultedAt) {
       inline: true,
     },
     {
-      name: '📈 Potencial de Valorização',
-      value: bold(formatPotential(result)),
+      name: '📈 Potencial',
+      value: formatHighlightedPotential(result),
       inline: true,
     },
     {
-      name: 'Status',
-      value: formatStatus(result),
-      inline: false,
+      name: formatStatusTitle(result),
+      value: bold(formatStatus(result)),
+      inline: true,
     },
+    SPACER_FIELD,
     {
       name: 'Resumo Executivo',
       value: formatExecutiveSummary(result),
       inline: false,
     },
+    SPACER_FIELD,
     {
-      name: '📊 Indicadores',
-      value: formatIndicators(result),
+      name: '🛡️ Margem de Segurança',
+      value: formatNullablePercentage(result.marginOfSafety),
       inline: true,
     },
+    {
+      name: '📊 LPA',
+      value: formatNumber(result.inputs.eps),
+      inline: true,
+    },
+    {
+      name: '🏦 VPA',
+      value: formatNumber(result.inputs.bookValuePerShare),
+      inline: true,
+    },
+    {
+      name: '💎 Preço Graham',
+      value: formatNullableCurrency(result.fairPrice),
+      inline: true,
+    },
+    SPACER_FIELD,
     {
       name: '🔎 Confiabilidade dos Dados',
       value: formatDataReliability(result),
@@ -112,7 +136,7 @@ function buildFields(result, consultedAt) {
     {
       name: '📅 Dados Utilizados',
       value: formatDataReference(result, consultedAt),
-      inline: false,
+      inline: true,
     },
   ];
 }
@@ -143,6 +167,20 @@ function resolveDescription(result) {
 
 function formatStatus(result) {
   return STATUS_LABELS[result.status] || STATUS_LABELS[ANALYSIS_STATUS.ERROR];
+}
+
+function formatStatusTitle(result) {
+  const status = formatStatus(result);
+  const [icon, label] = status.split(' ');
+
+  return label ? `${icon} Status` : 'Status';
+}
+
+function formatCompanyCard(result) {
+  const companyName = formatCompanyName(result.companyName);
+  const ticker = result.ticker || 'Ticker nao informado';
+
+  return `${companyName} (${ticker})`;
 }
 
 function formatCurrency(value) {
@@ -184,17 +222,19 @@ function formatPotential(result) {
   return `${icon}${sign}${formatPercentage(potential)}`;
 }
 
-function formatPercentage(value) {
-  return `${PERCENTAGE_FORMATTER.format(value)}%`;
+function formatHighlightedPotential(result) {
+  const potential = formatPotential(result);
+  const [icon, value] = potential.split(' ');
+
+  if (!value) {
+    return bold(potential);
+  }
+
+  return `${icon} ${bold(value)}`;
 }
 
-function formatIndicators(result) {
-  return [
-    `🛡️ Margem de Segurança: ${formatNullablePercentage(result.marginOfSafety)}`,
-    `LPA: ${formatNumber(result.inputs.eps)}`,
-    `VPA: ${formatNumber(result.inputs.bookValuePerShare)}`,
-    `Graham: ${formatNullableCurrency(result.fairPrice)}`,
-  ].join('\n');
+function formatPercentage(value) {
+  return `${PERCENTAGE_FORMATTER.format(value)}%`;
 }
 
 function formatExecutiveSummary(result) {

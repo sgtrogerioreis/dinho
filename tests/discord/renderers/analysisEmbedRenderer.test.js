@@ -48,29 +48,33 @@ test('AnalysisEmbedRenderer renders UNDERVALUED as a release-candidate Graham re
       '🏢 Empresa',
       '💰 Preço Atual',
       '🎯 Preço Justo',
-      '📈 Potencial de Valorização',
-      'Status',
+      '📈 Potencial',
+      '🟢 Status',
+      '​',
       'Resumo Executivo',
-      '📊 Indicadores',
+      '​',
+      '🛡️ Margem de Segurança',
+      '📊 LPA',
+      '🏦 VPA',
+      '💎 Preço Graham',
+      '​',
       '🔎 Confiabilidade dos Dados',
       '📅 Dados Utilizados',
     ],
   );
-  assert.equal(field(embed, '🏢 Empresa').value, 'PETROBRAS\nPETR4');
+  assert.equal(field(embed, '🏢 Empresa').value, 'PETROBRAS (PETR4)');
   assert.equal(field(embed, '💰 Preço Atual').value, `**R$\u00a040,90**`);
   assert.equal(field(embed, '🎯 Preço Justo').value, `**R$\u00a080,56**`);
-  assert.equal(field(embed, '📈 Potencial de Valorização').value, '**🟢 +96,96%**');
-  assert.equal(field(embed, 'Status').value, '🟢 SUBAVALIADA');
+  assert.equal(field(embed, '📈 Potencial').value, '🟢 **+96,96%**');
+  assert.equal(field(embed, '🟢 Status').value, '**🟢 SUBAVALIADA**');
   assert.equal(
     field(embed, 'Resumo Executivo').value,
     '🟢 A ação negocia abaixo do preço justo calculado por Graham.',
   );
-  assert.equal(
-    field(embed, '📊 Indicadores').value,
-    [`🛡️ Margem de Segurança: 49,23%`, 'LPA: 8,35', 'VPA: 34,54', `Graham: R$\u00a080,56`].join(
-      '\n',
-    ),
-  );
+  assert.equal(field(embed, '🛡️ Margem de Segurança').value, '49,23%');
+  assert.equal(field(embed, '📊 LPA').value, '8,35');
+  assert.equal(field(embed, '🏦 VPA').value, '34,54');
+  assert.equal(field(embed, '💎 Preço Graham').value, `R$\u00a080,56`);
   assert.equal(
     field(embed, '🔎 Confiabilidade dos Dados').value,
     ['🟢 Alta', 'Dados necessários encontrados.', 'Sem estimativas.'].join('\n'),
@@ -110,8 +114,8 @@ test('AnalysisEmbedRenderer renders OVERVALUED with visual status and negative p
   );
 
   assert.equal(embed.color, STATUS_COLORS.OVERVALUED);
-  assert.equal(field(embed, '📈 Potencial de Valorização').value, '**🔴 -72,61%**');
-  assert.equal(field(embed, 'Status').value, '🔴 SOBREAVALIADA');
+  assert.equal(field(embed, '📈 Potencial').value, '🔴 **-72,61%**');
+  assert.equal(field(embed, '🔴 Status').value, '**🔴 SOBREAVALIADA**');
   assert.equal(
     field(embed, 'Resumo Executivo').value,
     '🔴 A ação negocia acima do preço justo calculado por Graham.',
@@ -138,8 +142,8 @@ test('AnalysisEmbedRenderer renders FAIR_VALUE with neutral visual status', () =
   );
 
   assert.equal(embed.color, STATUS_COLORS.FAIR_VALUE);
-  assert.equal(field(embed, '📈 Potencial de Valorização').value, '**🟢 +2,00%**');
-  assert.equal(field(embed, 'Status').value, '🟡 PREÇO JUSTO');
+  assert.equal(field(embed, '📈 Potencial').value, '🟢 **+2,00%**');
+  assert.equal(field(embed, '🟡 Status').value, '**🟡 PREÇO JUSTO**');
   assert.equal(
     field(embed, 'Resumo Executivo').value,
     '🟡 A ação negocia próxima do preço justo calculado por Graham.',
@@ -167,16 +171,16 @@ test('AnalysisEmbedRenderer renders NOT_APPLICABLE without financial projections
 
   assert.equal(embed.color, STATUS_COLORS.NOT_APPLICABLE);
   assert.equal(field(embed, '🎯 Preço Justo').value, '**—**');
-  assert.equal(field(embed, '📈 Potencial de Valorização').value, '**—**');
-  assert.equal(field(embed, 'Status').value, '⚪ NÃO APLICÁVEL');
+  assert.equal(field(embed, '📈 Potencial').value, '**—**');
+  assert.equal(field(embed, '⚪ Status').value, '**⚪ NÃO APLICÁVEL**');
   assert.equal(
     field(embed, 'Resumo Executivo').value,
     '⚪ O método Graham não é aplicável devido aos fundamentos atuais.',
   );
-  assert.equal(
-    field(embed, '📊 Indicadores').value,
-    ['🛡️ Margem de Segurança: —', 'LPA: -2,40', 'VPA: 0,88', 'Graham: —'].join('\n'),
-  );
+  assert.equal(field(embed, '🛡️ Margem de Segurança').value, '—');
+  assert.equal(field(embed, '📊 LPA').value, '-2,40');
+  assert.equal(field(embed, '🏦 VPA').value, '0,88');
+  assert.equal(field(embed, '💎 Preço Graham').value, '—');
   assert.equal(
     field(embed, '🔎 Confiabilidade dos Dados').value,
     ['⚪ Não aplicável', 'LPA e/ou VPA não positivos.'].join('\n'),
