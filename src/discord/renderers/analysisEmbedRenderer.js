@@ -1,6 +1,6 @@
 const { EmbedBuilder } = require('discord.js');
 const { ANALYSIS_STATUS } = require('../../analysis/analysisStatus');
-const { NullLogoProvider } = require('../../branding/logoProvider');
+const { LogoProvider } = require('../../branding/logoProvider');
 
 const CURRENCY_FORMATTER = new Intl.NumberFormat('pt-BR', {
   style: 'currency',
@@ -32,25 +32,31 @@ const STATUS_COLORS = Object.freeze({
 
 class AnalysisEmbedRenderer {
   constructor(options = {}) {
-    this.logoProvider = options.logoProvider || new NullLogoProvider();
+    this.logoProvider = options.logoProvider || new LogoProvider();
   }
 
   render(result, options = {}) {
     const consultedAt = options.consultedAt || new Date();
     const embed = this.createBaseEmbed(result);
-    const logoUrl = resolveLogoUrl(this.logoProvider, result);
+    const logoAttachment = resolveLogoAttachment(this.logoProvider, result.ticker);
 
-    if (logoUrl) {
-      embed.setThumbnail(logoUrl);
+    if (logoAttachment) {
+      embed.setThumbnail(`attachment://${logoAttachment.name}`);
     }
 
     embed.addFields(...buildFields(result, consultedAt)).setFooter({
       text: 'Os cálculos utilizam fundamentos públicos da CVM processados pela BolsAI. O método Benjamin Graham não constitui recomendação de investimento.',
     });
 
-    return {
+    const payload = {
       embeds: [embed],
     };
+
+    if (logoAttachment) {
+      payload.files = [logoAttachment];
+    }
+
+    return payload;
   }
 
   createBaseEmbed(result) {
@@ -111,9 +117,9 @@ function buildFields(result, consultedAt) {
   ];
 }
 
-function resolveLogoUrl(logoProvider, result) {
+function resolveLogoAttachment(logoProvider, ticker) {
   try {
-    return logoProvider.getLogoUrl(result);
+    return logoProvider.getAttachment(ticker);
   } catch {
     return null;
   }
@@ -325,5 +331,5 @@ module.exports = {
   formatCompanyName,
   formatDataReliability,
   formatExecutiveSummary,
-  resolveLogoUrl,
+  resolveLogoAttachment,
 };

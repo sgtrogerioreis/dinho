@@ -183,7 +183,7 @@ test('AnalysisEmbedRenderer renders NOT_APPLICABLE without financial projections
   );
 });
 
-test('AnalysisEmbedRenderer uses optional thumbnails without depending on external defaults', () => {
+test('AnalysisEmbedRenderer uses optional local attachment thumbnails', () => {
   const result = new AnalysisResult({
     method: 'GRAHAM',
     ticker: 'PETR4',
@@ -200,26 +200,37 @@ test('AnalysisEmbedRenderer uses optional thumbnails without depending on extern
     },
   });
 
-  const withoutLogo = render(result);
-  const withLogo = render(result, {
+  const withoutLogo = renderPayload(result);
+  const withLogo = renderPayload(result, {
     logoProvider: {
-      getLogoUrl() {
-        return 'https://assets.example.test/petr4.png';
+      getAttachment() {
+        return {
+          name: 'PETR4.png',
+          attachment: 'src/assets/logos/PETR4.png',
+        };
       },
     },
   });
-  const failingLogo = render(result, {
+  const failingLogo = renderPayload(result, {
     logoProvider: {
-      getLogoUrl() {
+      getAttachment() {
         throw new Error('logo unavailable');
       },
     },
   });
 
-  assert.equal(withoutLogo.thumbnail, undefined);
-  assert.equal(withLogo.thumbnail.url, 'https://assets.example.test/petr4.png');
-  assert.equal(failingLogo.thumbnail, undefined);
-  assert.equal(new NullLogoProvider().getLogoUrl(result), null);
+  assert.equal(withoutLogo.embeds[0].toJSON().thumbnail, undefined);
+  assert.equal(withoutLogo.files, undefined);
+  assert.equal(withLogo.embeds[0].toJSON().thumbnail.url, 'attachment://PETR4.png');
+  assert.deepEqual(withLogo.files, [
+    {
+      name: 'PETR4.png',
+      attachment: 'src/assets/logos/PETR4.png',
+    },
+  ]);
+  assert.equal(failingLogo.embeds[0].toJSON().thumbnail, undefined);
+  assert.equal(failingLogo.files, undefined);
+  assert.equal(new NullLogoProvider().getAttachment('PETR4'), null);
 });
 
 test('AnalysisEmbedRenderer formats names, dates, potential, summaries and reliability', () => {
@@ -240,13 +251,15 @@ test('AnalysisEmbedRenderer formats names, dates, potential, summaries and relia
 });
 
 function render(result, options = {}) {
+  return renderPayload(result, options).embeds[0].toJSON();
+}
+
+function renderPayload(result, options = {}) {
   return new AnalysisEmbedRenderer({
     logoProvider: options.logoProvider,
-  })
-    .render(result, {
-      consultedAt: CONSULTED_AT,
-    })
-    .embeds[0].toJSON();
+  }).render(result, {
+    consultedAt: CONSULTED_AT,
+  });
 }
 
 function field(embed, name) {
