@@ -1,0 +1,6503 @@
+{
+  "generatedAt": "2026-07-18T14:58:15.827Z",
+  "apiKeyDisplayed": false,
+  "endpointsUsed": ["/fundamentals/{ticker}"],
+  "requestCount": 73,
+  "localRequestCount": 73,
+  "panelUsedToday": 18,
+  "panelDifference": 24,
+  "tickersByLayer": {
+    "required": [
+      "PETR4",
+      "VALE3",
+      "ITUB4",
+      "BBAS3",
+      "WEGE3",
+      "PRIO3",
+      "TAEE11",
+      "CMIG4",
+      "EMBR3",
+      "SUZB3",
+      "B3SA3"
+    ],
+    "ibov": [
+      "VALE3",
+      "ITUB4",
+      "PETR4",
+      "AXIA3",
+      "PETR3",
+      "BBDC4",
+      "SBSP3",
+      "ITSA4",
+      "B3SA3",
+      "BPAC11",
+      "ABEV3",
+      "WEGE3",
+      "BBAS3",
+      "EMBJ3",
+      "EQTL3",
+      "ENEV3",
+      "CPLE3",
+      "PRIO3",
+      "VBBR3",
+      "RDOR3",
+      "RENT3",
+      "UGPA3",
+      "GGBR4",
+      "SUZB3",
+      "BBSE3",
+      "VIVT3",
+      "RADL3",
+      "BBDC3",
+      "CSMG3",
+      "CMIG4",
+      "TIMS3",
+      "RAIL3",
+      "ENGI11",
+      "TOTS3",
+      "MOTV3",
+      "KLBN11",
+      "CXSE3",
+      "LREN3",
+      "ALOS3",
+      "ISAE4",
+      "MBRF3",
+      "ASAI3",
+      "SMFT3",
+      "EGIE3",
+      "PSSA3",
+      "SANB11",
+      "MULT3",
+      "BRAV3",
+      "TAEE11",
+      "CPFE3",
+      "CMIN3",
+      "GOAU4",
+      "CSAN3",
+      "FLRY3",
+      "NATU3",
+      "HYPE3",
+      "CYRE3",
+      "BRAP4",
+      "IGTI11",
+      "CURY3",
+      "COGN3",
+      "USIM5",
+      "DIRR3",
+      "POMO4",
+      "AURE3",
+      "CSNA3",
+      "HAPV3",
+      "SLCE3",
+      "RECV3",
+      "VIVA3",
+      "YDUQ3",
+      "AZZA3",
+      "CEAB3",
+      "MGLU3",
+      "MRVE3",
+      "BRKM5",
+      "BEEF3",
+      "VAMO3"
+    ]
+  },
+  "summary": {
+    "required": {
+      "tickers": 11,
+      "grahamComplete": 11,
+      "grahamDataComplete": 11,
+      "grahamDataCoveragePct": 100,
+      "grahamApplicable": 11,
+      "grahamApplicabilityPct": 100,
+      "grahamNotApplicable": 0,
+      "bazinComplete": 0,
+      "fcdComplete": 0,
+      "allComplete": 0,
+      "grahamCoveragePct": 100,
+      "bazinCoveragePct": 0,
+      "fcdCoveragePct": 0
+    },
+    "ibov": {
+      "tickers": 78,
+      "grahamComplete": 70,
+      "grahamDataComplete": 78,
+      "grahamDataCoveragePct": 100,
+      "grahamApplicable": 70,
+      "grahamApplicabilityPct": 89.74,
+      "grahamNotApplicable": 8,
+      "bazinComplete": 0,
+      "fcdComplete": 0,
+      "allComplete": 0,
+      "grahamCoveragePct": 89.74,
+      "bazinCoveragePct": 0,
+      "fcdCoveragePct": 0
+    },
+    "total": {
+      "tickers": 79,
+      "grahamComplete": 71,
+      "grahamDataComplete": 79,
+      "grahamDataCoveragePct": 100,
+      "grahamApplicable": 71,
+      "grahamApplicabilityPct": 89.87,
+      "grahamNotApplicable": 8,
+      "bazinComplete": 0,
+      "fcdComplete": 0,
+      "allComplete": 0,
+      "grahamCoveragePct": 89.87,
+      "bazinCoveragePct": 0,
+      "fcdCoveragePct": 0
+    },
+    "grahamIbov": {
+      "tested": 78,
+      "dataComplete": 78,
+      "dataCoveragePct": 100,
+      "complete": 70,
+      "notApplicable": 8,
+      "missingData": 0,
+      "incomplete": 8,
+      "applicabilityPct": 89.74,
+      "coveragePct": 100,
+      "failuresByCategory": {
+        "not_applicable": 8
+      },
+      "completeTickers": [
+        "PETR4",
+        "VALE3",
+        "ITUB4",
+        "BBAS3",
+        "WEGE3",
+        "PRIO3",
+        "TAEE11",
+        "CMIG4",
+        "SUZB3",
+        "B3SA3",
+        "AXIA3",
+        "PETR3",
+        "BBDC4",
+        "SBSP3",
+        "ITSA4",
+        "BPAC11",
+        "ABEV3",
+        "EMBJ3",
+        "EQTL3",
+        "ENEV3",
+        "CPLE3",
+        "VBBR3",
+        "RDOR3",
+        "RENT3",
+        "UGPA3",
+        "GGBR4",
+        "BBSE3",
+        "VIVT3",
+        "RADL3",
+        "BBDC3",
+        "CSMG3",
+        "TIMS3",
+        "RAIL3",
+        "ENGI11",
+        "TOTS3",
+        "MOTV3",
+        "KLBN11",
+        "CXSE3",
+        "LREN3",
+        "ALOS3",
+        "ISAE4",
+        "MBRF3",
+        "ASAI3",
+        "SMFT3",
+        "EGIE3",
+        "PSSA3",
+        "SANB11",
+        "MULT3",
+        "BRAV3",
+        "CPFE3",
+        "CMIN3",
+        "GOAU4",
+        "FLRY3",
+        "HYPE3",
+        "CYRE3",
+        "BRAP4",
+        "IGTI11",
+        "CURY3",
+        "COGN3",
+        "DIRR3",
+        "POMO4",
+        "SLCE3",
+        "RECV3",
+        "VIVA3",
+        "YDUQ3",
+        "AZZA3",
+        "CEAB3",
+        "MGLU3",
+        "BEEF3",
+        "VAMO3"
+      ],
+      "incompleteTickers": [
+        {
+          "ticker": "CSAN3",
+          "category": "not_applicable"
+        },
+        {
+          "ticker": "NATU3",
+          "category": "not_applicable"
+        },
+        {
+          "ticker": "USIM5",
+          "category": "not_applicable"
+        },
+        {
+          "ticker": "AURE3",
+          "category": "not_applicable"
+        },
+        {
+          "ticker": "CSNA3",
+          "category": "not_applicable"
+        },
+        {
+          "ticker": "HAPV3",
+          "category": "not_applicable"
+        },
+        {
+          "ticker": "MRVE3",
+          "category": "not_applicable"
+        },
+        {
+          "ticker": "BRKM5",
+          "category": "not_applicable"
+        }
+      ]
+    }
+  },
+  "results": [
+    {
+      "ticker": "PETR4",
+      "companyName": "PETRÓLEO BRASILEIRO S.A. - PETROBRAS",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 80.55558639846153
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 8.35,
+          "calculated": 0.008347058007559537,
+          "diffPct": 99.9000352334424
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 34.54,
+          "calculated": 0.034540944269330874,
+          "diffPct": 99.89999726615711
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": 324091000,
+          "calculated": 324091000,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "VALE3",
+      "companyName": "VALE S.A.",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 58.32197913308498
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 3.51,
+          "calculated": 0.0035148543484590836,
+          "diffPct": 99.8998616994741
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 43.07,
+          "calculated": 0.043074818246167546,
+          "diffPct": 99.89998881298777
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": 70768000,
+          "calculated": 70768000,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "ITUB4",
+      "companyName": "ITAÚ UNIBANCO HOLDING S.A.",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 43.728794861052364
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "zero",
+            "debt": "zero",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 4.26,
+          "calculated": 0.00426385759922779,
+          "diffPct": 99.89990944602751
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 19.95,
+          "calculated": 0.01995280765274902,
+          "diffPct": 99.89998592655263
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "BBAS3",
+      "companyName": "BANCO DO BRASIL S.A.",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 40.78359045008176
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 2.21,
+          "calculated": 0.002208489185284451,
+          "diffPct": 99.90006836265682
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 33.45,
+          "calculated": 0.0334480329847416,
+          "diffPct": 99.90000588046415
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": 873283896,
+          "calculated": 873283896,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "WEGE3",
+      "companyName": "WEG SA",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 11.948326242616579
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 1.5,
+          "calculated": 0.0014979494055479949,
+          "diffPct": 99.90013670629679
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 4.23,
+          "calculated": 0.004227962477099882,
+          "diffPct": 99.90004816839007
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": -3293287,
+          "calculated": -3293287,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "PRIO3",
+      "companyName": "PRIO S.A.",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 45.160812658764236
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 2.97,
+          "calculated": 0.0029681570890087456,
+          "diffPct": 99.90006205087514
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 30.52,
+          "calculated": 0.030522312417414238,
+          "diffPct": 99.89999242327191
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": 24107991,
+          "calculated": 24107991,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "TAEE11",
+      "companyName": "TRANSMISSORA ALIANÇA DE ENERGIA ELÉTRICA S.A.",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 48.62985194301953
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 4.55,
+          "calculated": 0.004552548551336914,
+          "diffPct": 99.8999439878827
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 23.1,
+          "calculated": 0.023103733678899598,
+          "diffPct": 99.89998383688788
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": 10079301,
+          "calculated": 10079301,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "CMIG4",
+      "companyName": "CIA ENERG MINAS GERAIS - CEMIG",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 19.587553446002385
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 1.69,
+          "calculated": 0.001690452374603481,
+          "diffPct": 99.89997323227198
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 10.09,
+          "calculated": 0.010094272051434584,
+          "diffPct": 99.89995766054079
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": 17817995,
+          "calculated": 17817995,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "EMBR3",
+      "companyName": "EMBRAER S.A.",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 34.58171843619111
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 2.29,
+          "calculated": 0.0022874354619770547,
+          "diffPct": 99.90011198855996
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 23.21,
+          "calculated": 0.023213175475708208,
+          "diffPct": 99.89998631850192
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": 3003089,
+          "calculated": 3003089,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "SUZB3",
+      "companyName": "SUZANO S.A.",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 87.72114910328068
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 9,
+          "calculated": 0.008996657324484795,
+          "diffPct": 99.90003714083906
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 38,
+          "calculated": 0.03799964135457443,
+          "diffPct": 99.90000094380376
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": 68386020,
+          "calculated": 68386020,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "B3SA3",
+      "companyName": "B3 S.A. - BRASIL, BOLSA, BALCÃO",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 8.934259902196711
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 0.98,
+          "calculated": 0.0009821678390964034,
+          "diffPct": 99.89977879192894
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 3.62,
+          "calculated": 0.0036174937085108492,
+          "diffPct": 99.90006923457153
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": -626862,
+          "calculated": -626862,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "AXIA3",
+      "companyName": "AXIA ENERGIA S.A.",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 54.77740410059608
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 3.24,
+          "calculated": 0.003241748183067719,
+          "diffPct": 99.89994604373248
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 41.16,
+          "calculated": 0.04116157599998307,
+          "diffPct": 99.89999617103987
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": 45846413,
+          "calculated": 45846413,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "PETR3",
+      "companyName": "PETRÓLEO BRASILEIRO S.A. - PETROBRAS",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 80.55558639846153
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 8.35,
+          "calculated": 0.008347058007559537,
+          "diffPct": 99.9000352334424
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 34.54,
+          "calculated": 0.034540944269330874,
+          "diffPct": 99.89999726615711
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": 324091000,
+          "calculated": 324091000,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "BBDC4",
+      "companyName": "BANCO BRADESCO S.A.",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 28.917066759960285
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 2.19,
+          "calculated": 0.0021946554572020546,
+          "diffPct": 99.89978742204558
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 16.97,
+          "calculated": 0.016971605916307028,
+          "diffPct": 99.89999053673361
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": 466341840,
+          "calculated": 466341840,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "SBSP3",
+      "companyName": "CIA SANEAMENTO BÁSICO ESTADO SÃO PAULO",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 26.304372260139566
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 2.48,
+          "calculated": 0.002476638879943853,
+          "diffPct": 99.90013552903453
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 12.4,
+          "calculated": 0.012399073378217707,
+          "diffPct": 99.90000747275631
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": 32460471,
+          "calculated": 32460471,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "ITSA4",
+      "companyName": "ITAUSA S.A.",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 16.527522500362842
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 1.51,
+          "calculated": 0.001514488520568277,
+          "diffPct": 99.89970274698223
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 8.04,
+          "calculated": 0.008043384949724803,
+          "diffPct": 99.89995789863528
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": 4250000,
+          "calculated": 4250000,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "BPAC11",
+      "companyName": "BANCO BTG PACTUAL S/A",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 19.19648405307597
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "zero",
+            "debt": "zero",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 0.76,
+          "calculated": 0.0007617213073999337,
+          "diffPct": 99.89977351218423
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 21.55,
+          "calculated": 0.021546498247771096,
+          "diffPct": 99.9000162494303
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "ABEV3",
+      "companyName": "AMBEV S.A.",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 11.287736708481464
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 0.99,
+          "calculated": 0.0009882040191599255,
+          "diffPct": 99.90018141220607
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 5.72,
+          "calculated": 0.00571731216278839,
+          "diffPct": 99.90004699016104
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": -16534856,
+          "calculated": -16534856,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "EMBJ3",
+      "companyName": "EMBRAER S.A.",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 34.58171843619111
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 2.29,
+          "calculated": 0.0022874354619770547,
+          "diffPct": 99.90011198855996
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 23.21,
+          "calculated": 0.023213175475708208,
+          "diffPct": 99.89998631850192
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": 3003089,
+          "calculated": 3003089,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "EQTL3",
+      "companyName": "EQUATORIAL S.A.",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 31.267714978872373
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 2.13,
+          "calculated": 0.0021279971128685114,
+          "diffPct": 99.9000940322597
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 20.4,
+          "calculated": 0.020396012537359374,
+          "diffPct": 99.9000195463855
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": 45947935,
+          "calculated": 45947935,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "ENEV3",
+      "companyName": "ENEVA S.A.",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 12.593212457510594
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 0.67,
+          "calculated": 0.0006690290409240057,
+          "diffPct": 99.90014491926506
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 10.52,
+          "calculated": 0.010520213977720195,
+          "diffPct": 99.89999796599125
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": 18466711,
+          "calculated": 18466711,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "CPLE3",
+      "companyName": "COMPANHIA PARANAENSE DE ENERGIA COPEL",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 12.7904358799847
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 0.91,
+          "calculated": 0.0009102639665396039,
+          "diffPct": 99.89997099268795
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 7.99,
+          "calculated": 0.007989910278550436,
+          "diffPct": 99.90000112292176
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": 18139322,
+          "calculated": 18139322,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "VBBR3",
+      "companyName": "VIBRA ENERGIA S/A",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 31.998308549046776
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 2.51,
+          "calculated": 0.002508002222870904,
+          "diffPct": 99.9000795927143
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 18.13,
+          "calculated": 0.01812920169686024,
+          "diffPct": 99.90000440321643
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": 18152000,
+          "calculated": 18152000,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "RDOR3",
+      "companyName": "REDE D'OR SÃO LUIZ S.A.",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 20.218976235210327
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 2.06,
+          "calculated": 0.0020601126034166814,
+          "diffPct": 99.89999453381473
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 8.82,
+          "calculated": 0.008824419224633511,
+          "diffPct": 99.8999498954123
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": 7254102,
+          "calculated": 7254102,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "RENT3",
+      "companyName": "LOCALIZA RENT A CAR SA",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 32.449961479175904
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 2,
+          "calculated": 0.002004984001267074,
+          "diffPct": 99.89975079993665
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 23.4,
+          "calculated": 0.02340172853977923,
+          "diffPct": 99.89999261307787
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": 32293013,
+          "calculated": 32293013,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "UGPA3",
+      "companyName": "ULTRAPAR PARTICIPAÇÕES SA",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 29.888944444392813
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 2.69,
+          "calculated": 0.0026854696787692333,
+          "diffPct": 99.90016841342864
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 14.76,
+          "calculated": 0.01476036911284391,
+          "diffPct": 99.89999749923547
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": 13963518,
+          "calculated": 13963518,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "GGBR4",
+      "companyName": "GERDAU S.A.",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 22.27962073285809
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 0.83,
+          "calculated": 0.0008259184048700241,
+          "diffPct": 99.90049175844939
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 26.58,
+          "calculated": 0.026583527460337833,
+          "diffPct": 99.89998672889263
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": 8244572,
+          "calculated": 8244572,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "BBSE3",
+      "companyName": "BB SEGURIDADE PARTICIPAÇÕES S.A.",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 26.321602344842155
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 4.73,
+          "calculated": 0.0047349835170495515,
+          "diffPct": 99.89989464023152
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 6.51,
+          "calculated": 0.006511326362418873,
+          "diffPct": 99.89997962576929
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": -2563700,
+          "calculated": -2563700,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "VIVT3",
+      "companyName": "TELEFÔNICA BRASIL S.A.",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 30.899199018744806
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 1.97,
+          "calculated": 0.001974487818202058,
+          "diffPct": 99.89977219196943
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 21.54,
+          "calculated": 0.021540045795749235,
+          "diffPct": 99.89999978739206
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": 10718571,
+          "calculated": 10718571,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "RADL3",
+      "companyName": "RAIA DROGASIL S.A.",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 8.352454729000332
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 0.74,
+          "calculated": 0.0007372027357295925,
+          "diffPct": 99.90037800868518
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 4.19,
+          "calculated": 0.004188846034556097,
+          "diffPct": 99.90002754094138
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": 3123812,
+          "calculated": 3123812,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "BBDC3",
+      "companyName": "BANCO BRADESCO S.A.",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 28.917066759960285
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 2.19,
+          "calculated": 0.0021946554572020546,
+          "diffPct": 99.89978742204558
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 16.97,
+          "calculated": 0.016971605916307028,
+          "diffPct": 99.89999053673361
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": 466341840,
+          "calculated": 466341840,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "CSMG3",
+      "companyName": "COMPANHIA DE SANEAMENTO DE MINAS GERAIS",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 42.977971101484066
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 3.56,
+          "calculated": 0.00356430785309454,
+          "diffPct": 99.8998789928906
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 23.06,
+          "calculated": 0.023060442412892138,
+          "diffPct": 99.89999808147056
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": 6862422,
+          "calculated": 6862422,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "TIMS3",
+      "companyName": "TIM S.A.",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 16.533987722264705
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 1.19,
+          "calculated": 0.0011942904063440786,
+          "diffPct": 99.89963946165177
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 10.21,
+          "calculated": 0.01020854467245808,
+          "diffPct": 99.90001425394262
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": -3039320,
+          "calculated": -3039320,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "RAIL3",
+      "companyName": "RUMO S.A.",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 9.708140913686822
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 0.56,
+          "calculated": 0.0005595878987912095,
+          "diffPct": 99.90007358950157
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 7.48,
+          "calculated": 0.007475314761629797,
+          "diffPct": 99.90006263687661
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": 17466467,
+          "calculated": 17466467,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "ENGI11",
+      "companyName": "ENERGISA SA",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 57.60773385579405
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 3.78,
+          "calculated": 0.0037808824164568887,
+          "diffPct": 99.8999766556493
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 39.02,
+          "calculated": 0.03902170133549988,
+          "diffPct": 99.89999563983726
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": 33792166,
+          "calculated": 33792166,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "TOTS3",
+      "companyName": "TOTVS S.A",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 16.938181720597992
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 1.54,
+          "calculated": 0.0015447473436010174,
+          "diffPct": 99.899691730935
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 8.28,
+          "calculated": 0.008281519697893489,
+          "diffPct": 99.89998164616071
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": 3430040,
+          "calculated": 3430040,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "MOTV3",
+      "companyName": "MOTIVA INFRAESTRUTURA DE MOBILIDADE S.A.",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 17.38279321628144
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 1.66,
+          "calculated": 0.0016641232673267326,
+          "diffPct": 99.899751610402
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 8.09,
+          "calculated": 0.008087128712871287,
+          "diffPct": 99.90003549180629
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": 30817000,
+          "calculated": 30817000,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "KLBN11",
+      "companyName": "KLABIN S.A.",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 9.810389900508541
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 0.59,
+          "calculated": 0.00058859127592814,
+          "diffPct": 99.90023876679184
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 7.25,
+          "calculated": 0.007246688819589607,
+          "diffPct": 99.90004567145394
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": 24701946,
+          "calculated": 24701946,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "CXSE3",
+      "companyName": "CAIXA SEGURIDADE PARTICIPAÇÕES S.A.",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 12.279311869970565
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 1.46,
+          "calculated": 0.0014638063333333334,
+          "diffPct": 99.89973929223743
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 4.59,
+          "calculated": 0.004590669666666667,
+          "diffPct": 99.89998541031227
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": -1099450,
+          "calculated": -1099450,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "LREN3",
+      "companyName": "LOJAS RENNER SA",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 18.51998920086078
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 1.48,
+          "calculated": 0.001483628422503265,
+          "diffPct": 99.89975483631734
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 10.3,
+          "calculated": 0.010295599642366038,
+          "diffPct": 99.90004272191878
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": -1454488,
+          "calculated": -1454488,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "ALOS3",
+      "companyName": "ALLOS S.A.",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 30.80095777731595
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "zero",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 1.64,
+          "calculated": 0.0016418343187744701,
+          "diffPct": 99.89988815129423
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 25.71,
+          "calculated": 0.025713724288667167,
+          "diffPct": 99.89998551424088
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": -2155694,
+          "calculated": -2155694,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "ISAE4",
+      "companyName": "ISA ENERGIA BRASIL S.A.",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 51.03775073413796
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 3.56,
+          "calculated": 0.0035571154797390345,
+          "diffPct": 99.90008102585003
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 32.52,
+          "calculated": 0.03251947176369793,
+          "diffPct": 99.90000162434288
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": 14987895,
+          "calculated": 14987895,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "MBRF3",
+      "companyName": "MARFRIG GLOBAL FOODS SA",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 7.03642309700035
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 0.27,
+          "calculated": 0.0002721846177688687,
+          "diffPct": 99.89919088230783
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 8.15,
+          "calculated": 0.008148747942055888,
+          "diffPct": 99.90001536267417
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": 49658919,
+          "calculated": 49658919,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "ASAI3",
+      "companyName": "SENDAS DISTRIBUIDORA S.A.",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 7.134073170356469
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 0.52,
+          "calculated": 0.000517165742419328,
+          "diffPct": 99.90054504953474
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 4.35,
+          "calculated": 0.004349363893746548,
+          "diffPct": 99.90001462313226
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": 12008000,
+          "calculated": 12008000,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "SMFT3",
+      "companyName": "SMARTFIT ESCOLA DE GINÁSTICA E DANÇA S.A.",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 15.56997109823907
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 1.12,
+          "calculated": 0.0011202086812077878,
+          "diffPct": 99.8999813677493
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 9.62,
+          "calculated": 0.009615471572579757,
+          "diffPct": 99.9000470730501
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": 4103064,
+          "calculated": 4103064,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "EGIE3",
+      "companyName": "ENGIE BRASIL ENERGIA S.A.",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 19.772708463940898
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 1.81,
+          "calculated": 0.00181139047902856,
+          "diffPct": 99.89992317795424
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 9.6,
+          "calculated": 0.009602637995446311,
+          "diffPct": 99.89997252088078
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": 24716266,
+          "calculated": 24716266,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "PSSA3",
+      "companyName": "PORTO SEGURO SA",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 55.51439002637064
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "zero",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 5.7,
+          "calculated": 0.005695510973434843,
+          "diffPct": 99.90007875485203
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 24.03,
+          "calculated": 0.02402762905219454,
+          "diffPct": 99.90000986661592
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": -13041095,
+          "calculated": -13041095,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "SANB11",
+      "companyName": "BANCO SANTANDER (BRASIL) S.A.",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 51.60667108039424
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "zero",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 3.46,
+          "calculated": 0.0034580434257186947,
+          "diffPct": 99.90005654838963
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 34.21,
+          "calculated": 0.03421232829328619,
+          "diffPct": 99.89999319411493
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": -25247371,
+          "calculated": -25247371,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "MULT3",
+      "companyName": "MULTIPLAN - EMPREEND IMOBILIARIOS S.A.",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 25.996172795240454
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 2.38,
+          "calculated": 0.002383685747094571,
+          "diffPct": 99.89984513667669
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 12.62,
+          "calculated": 0.012618493840038776,
+          "diffPct": 99.90001193470651
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": 4507767,
+          "calculated": 4507767,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "BRAV3",
+      "companyName": "BRAVA ENERGIA S.A.",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 16.622274212634082
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 0.5,
+          "calculated": 0.0005001859103407677,
+          "diffPct": 99.89996281793184
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 24.56,
+          "calculated": 0.024561113959366578,
+          "diffPct": 99.89999546433484
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": 10627401,
+          "calculated": 10627401,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "CPFE3",
+      "companyName": "CPFL ENERGIA SA",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 48.70959864338855
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 5,
+          "calculated": 0.005001712989710849,
+          "diffPct": 99.89996574020579
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 21.09,
+          "calculated": 0.021086967562476914,
+          "diffPct": 99.90001437855629
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": 25962216,
+          "calculated": 25962216,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "CMIN3",
+      "companyName": "CSN MINERAÇÃO S.A.",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 3.4630189141845586
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 0.41,
+          "calculated": 0.0004103933582291258,
+          "diffPct": 99.8999040589685
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 1.3,
+          "calculated": 0.0013034326118774543,
+          "diffPct": 99.8997359529325
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": 268642,
+          "calculated": 268642,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "GOAU4",
+      "companyName": "METALURGICA GERDAU SA",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 11.754105665681248
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 0.43,
+          "calculated": 0.0004341297830300283,
+          "diffPct": 99.89903958534185
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 14.28,
+          "calculated": 0.014278472726016133,
+          "diffPct": 99.90001069519597
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": 8217532,
+          "calculated": 8217532,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "CSAN3",
+      "companyName": "COSAN S.A.",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "not_applicable",
+          "category": "not_applicable",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "inconsistent",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": null
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": -2.4,
+          "calculated": -0.0023994478261355847,
+          "diffPct": 99.90002300724434
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 0.88,
+          "calculated": 0.0008807983167058614,
+          "diffPct": 99.89990928219252
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": 47412652,
+          "calculated": 47412652,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "FLRY3",
+      "companyName": "FLEURY SA",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 15.721545725532208
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 1.16,
+          "calculated": 0.001160028161719158,
+          "diffPct": 99.89999757226559
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 9.47,
+          "calculated": 0.009471306643833739,
+          "diffPct": 99.89998620228265
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": 3206829,
+          "calculated": 3206829,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "NATU3",
+      "companyName": "NATURA COSMETICOS SA",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "not_applicable",
+          "category": "not_applicable",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "inconsistent",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": null
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": -1.62,
+          "calculated": -0.0016221676760118618,
+          "diffPct": 99.89986619283879
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 9.07,
+          "calculated": 0.009066513824672544,
+          "diffPct": 99.90003843633217
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": 3996516,
+          "calculated": 3996516,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "HYPE3",
+      "companyName": "HYPERA S/A",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 32.84397204967755
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 2.39,
+          "calculated": 0.002390159584580005,
+          "diffPct": 99.89999332282092
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 20.06,
+          "calculated": 0.020060747542170475,
+          "diffPct": 99.89999627346874
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": 6232761,
+          "calculated": 6232761,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "CYRE3",
+      "companyName": "CYRELA BRAZIL REALTY S.A.EMPREEND E PART",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 47.93226470760588
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 4.36,
+          "calculated": 0.004357515644901399,
+          "diffPct": 99.90005698062151
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 23.42,
+          "calculated": 0.023422856215987577,
+          "diffPct": 99.89998780437239
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": 4924120,
+          "calculated": 4924120,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "BRAP4",
+      "companyName": "BRADESPAR S/A",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 40.31541268547303
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "zero",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 3.63,
+          "calculated": 0.003631117551484354,
+          "diffPct": 99.89996921345772
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 19.9,
+          "calculated": 0.01990325228192632,
+          "diffPct": 99.89998365687474
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": -256000,
+          "calculated": -256000,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "IGTI11",
+      "companyName": "IGUATEMI S.A.",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 21.960891375351775
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 1.77,
+          "calculated": 0.0017721334427715362,
+          "diffPct": 99.89987946651007
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 12.11,
+          "calculated": 0.012110104487488131,
+          "diffPct": 99.8999991371801
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": 1908459,
+          "calculated": 1908459,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "CURY3",
+      "companyName": "CURY CONSTRUTORA E INCORPORADORA S.A.",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 19.749139221748372
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 3.46,
+          "calculated": 0.0034570242415202894,
+          "diffPct": 99.90008600458033
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 5.01,
+          "calculated": 0.005014072598145338,
+          "diffPct": 99.89991871061586
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": -406894,
+          "calculated": -406894,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "COGN3",
+      "companyName": "COGNA EDUCAÇÃO S.A.",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 6.995051822538558
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 0.33,
+          "calculated": 0.0003254700360972859,
+          "diffPct": 99.90137271633415
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 6.59,
+          "calculated": 0.0065888899611932,
+          "diffPct": 99.90001684429146
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": 5331091,
+          "calculated": 5331091,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "USIM5",
+      "companyName": "USINAS SID DE MINAS GERAIS S.A.-USIMINAS",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "not_applicable",
+          "category": "not_applicable",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "inconsistent",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": null
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": -2.08,
+          "calculated": -0.002080961196585523,
+          "diffPct": 99.89995378862568
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 16.39,
+          "calculated": 0.01638943612488989,
+          "diffPct": 99.90000344036065
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": -494401,
+          "calculated": -494401,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "DIRR3",
+      "companyName": "DIRECIONAL ENGENHARIA SA",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 12.172109513145205
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 1.61,
+          "calculated": 0.0016099634966378483,
+          "diffPct": 99.90000226728958
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 4.09,
+          "calculated": 0.004091350624399616,
+          "diffPct": 99.89996697739855
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": 742594,
+          "calculated": 742594,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "POMO4",
+      "companyName": "MARCOPOLO SA",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 8.551315688243536
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 1,
+          "calculated": 0.0009981785698499578,
+          "diffPct": 99.900182143015
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 3.25,
+          "calculated": 0.003249290774669343,
+          "diffPct": 99.90002182231787
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": 1547888,
+          "calculated": 1547888,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "AURE3",
+      "companyName": "AUREN ENERGIA S.A",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "not_applicable",
+          "category": "not_applicable",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "inconsistent",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": null
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": -1.23,
+          "calculated": -0.001231809912266877,
+          "diffPct": 99.89985285266124
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 11.34,
+          "calculated": 0.011338357519671296,
+          "diffPct": 99.90001448395351
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": 20284428,
+          "calculated": 20284428,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "CSNA3",
+      "companyName": "CIA SIDERURGICA NACIONAL",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "not_applicable",
+          "category": "not_applicable",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "inconsistent",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": null
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": -1.51,
+          "calculated": -0.0015072529397496752,
+          "diffPct": 99.90018192451988
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 9.69,
+          "calculated": 0.009689932624358778,
+          "diffPct": 99.90000069531106
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": 36995584,
+          "calculated": 36995584,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "HAPV3",
+      "companyName": "HAPVIDA PARTICIPAÇÕES E INVESTIMENTOS S.A.",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "not_applicable",
+          "category": "not_applicable",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "inconsistent",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": null
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": -0.85,
+          "calculated": -0.0008532006560902055,
+          "diffPct": 99.89962345222469
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 95.8,
+          "calculated": 0.09580020753360631,
+          "diffPct": 99.89999978336786
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": 4973545,
+          "calculated": 4973545,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "SLCE3",
+      "companyName": "SLC AGRICOLA SA",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 12.486092262994054
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 0.65,
+          "calculated": 0.0006495752256063523,
+          "diffPct": 99.90006534990671
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 10.66,
+          "calculated": 0.010656433827941212,
+          "diffPct": 99.90003345377166
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": 6346758,
+          "calculated": 6346758,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "RECV3",
+      "companyName": "PETRORECÔNCAVO S.A.",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 26.4842405970041
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 2.18,
+          "calculated": 0.0021750966871488453,
+          "diffPct": 99.90022492260785
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 14.3,
+          "calculated": 0.014297259111445854,
+          "diffPct": 99.90001916705282
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": 1516562,
+          "calculated": 1516562,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "VIVA3",
+      "companyName": "VIVARA PARTICIPAÇÕES S.A.",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 26744.35185686877
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 2477.84,
+          "calculated": 2.4778403982300103,
+          "diffPct": 99.89999998392834
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 12829.46,
+          "calculated": 12.829460311286851,
+          "diffPct": 99.89999999757366
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": 204696188,
+          "calculated": 204696188,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "YDUQ3",
+      "companyName": "YDUQS PARTICIPACOES S.A.",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 10.288075621806053
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 0.43,
+          "calculated": 0.00043267356394587536,
+          "diffPct": 99.89937824094281
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 10.94,
+          "calculated": 0.010937416786792251,
+          "diffPct": 99.90002361255218
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": 4288316,
+          "calculated": 4288316,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "AZZA3",
+      "companyName": "AZZAS 2154 S.A.",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 59.29139693075211
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 4.03,
+          "calculated": 0.0040293464743464125,
+          "diffPct": 99.90001621651746
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 38.77,
+          "calculated": 0.03876967528659634,
+          "diffPct": 99.90000083753779
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": 2181008,
+          "calculated": 2181008,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "CEAB3",
+      "companyName": "C&A MODAS S.A.",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 22.658938633572404
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 1.9,
+          "calculated": 0.001896792716891094,
+          "diffPct": 99.90016880437415
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 12.01,
+          "calculated": 0.012012626914114973,
+          "diffPct": 99.8999781272763
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": 131654,
+          "calculated": 131654,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "MGLU3",
+      "companyName": "MAGAZINE LUIZA SA",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 7.671147241449612
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 0.18,
+          "calculated": 0.00017606273413627596,
+          "diffPct": 99.90218736992429
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 14.53,
+          "calculated": 0.014525704598577159,
+          "diffPct": 99.90002956229472
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": 3435311,
+          "calculated": 3435311,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "MRVE3",
+      "companyName": "MRV ENGENHARIA E PARTICIPAÇÕES S/A",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "not_applicable",
+          "category": "not_applicable",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "inconsistent",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": null
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": -1.35,
+          "calculated": -0.001352259467531249,
+          "diffPct": 99.89983263203473
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 9.27,
+          "calculated": 0.009265050781571593,
+          "diffPct": 99.90005338962705
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": 7931289,
+          "calculated": 7931289,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "BRKM5",
+      "companyName": "BRASKEM S.A.",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "not_applicable",
+          "category": "not_applicable",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "inconsistent",
+            "vpa": "inconsistent",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": null
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": -13.26,
+          "calculated": -0.013261284635093037,
+          "diffPct": 99.89999031195255
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": -19.74,
+          "calculated": -0.019738892831803256,
+          "diffPct": 99.9000056087548
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": 43018000,
+          "calculated": 43018000,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "BEEF3",
+      "companyName": "MINERVA S/A",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 4.486479689021226
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 0.71,
+          "calculated": 0.0007113931917719203,
+          "diffPct": 99.89980377580677
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 1.26,
+          "calculated": 0.0012597495737410728,
+          "diffPct": 99.90001987509991
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": 13690324,
+          "calculated": 13690324,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    },
+    {
+      "ticker": "VAMO3",
+      "companyName": "VAMOS LOCAÇÃO DE CAMINHÕES, MÁQUINAS E EQUIPAMENTOS S.A.",
+      "sector": null,
+      "methods": {
+        "graham": {
+          "status": "completo",
+          "category": "complete",
+          "fields": {
+            "ticker": "available",
+            "companyName": "available",
+            "currentPrice": "available",
+            "quoteDateTime": "available",
+            "lpa": "available",
+            "vpa": "available",
+            "netIncome": "available",
+            "equity": "available",
+            "sharesOutstanding": "available",
+            "fundamentalsEndpoint": "available"
+          },
+          "checkValue": 3.728035675794962
+        },
+        "bazin": {
+          "status": "parcial",
+          "fields": {
+            "dividendHistory": "missing",
+            "jcpHistory": "missing",
+            "exDate": "available",
+            "paymentDate": "available",
+            "valuePerShare": "available",
+            "type": "available",
+            "currency": "missing",
+            "annualSummary": "missing",
+            "currentPrice": "available",
+            "dividendYieldCurrent": "missing"
+          },
+          "annualDividends": [],
+          "completeYears": 0
+        },
+        "fcd": {
+          "status": "parcial",
+          "fields": {
+            "annualHistory": "missing",
+            "quarterlyHistory": "missing",
+            "netRevenue": "missing",
+            "ebitOrEbitda": "available",
+            "operatingCashFlow": "missing",
+            "capex": "missing",
+            "cash": "available",
+            "debt": "available",
+            "sharesOutstanding": "available",
+            "scaleAndCurrency": "missing"
+          },
+          "annualYears": 0,
+          "quarterlyPeriods": 0
+        }
+      },
+      "inconsistencies": [
+        {
+          "name": "lpa_calculated_vs_provided",
+          "provided": 0.29,
+          "calculated": 0.000294462341847427,
+          "diffPct": 99.89846126143192
+        },
+        {
+          "name": "vpa_calculated_vs_provided",
+          "provided": 2.13,
+          "calculated": 0.0021318077663974103,
+          "diffPct": 99.89991512833815
+        },
+        {
+          "name": "net_debt_vs_total_debt_minus_cash",
+          "provided": 11846017,
+          "calculated": 11846017,
+          "diffPct": 0
+        }
+      ],
+      "endpointErrors": {}
+    }
+  ],
+  "countingNotes": "Antes da rodada Graham-only, havia 42 resultados de endpoint no cache local do piloto e o painel BolsAI informado pelo usuario mostrava 18/200 requisicoes cobradas. A diferenca observada foi 24. Possiveis causas: endpoints PRO negados podem nao ter sido cobrados, resultados de cache nao consomem API, o contador local mede resultados de endpoint e a janela diaria do painel segue meia-noite UTC."
+}
