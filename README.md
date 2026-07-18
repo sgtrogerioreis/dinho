@@ -1,6 +1,6 @@
 # DINHO
 
-DINHO is a Discord bot for Brazilian stock valuation. The current MVP includes one slash command, `/graham`, backed by a valuation domain layer and a provider architecture that can switch between local JSON data and BRAPI without changing the financial formula.
+DINHO is a Discord bot for Brazilian stock valuation. The production `/graham` command uses BolsAI Free for the homologated Graham inputs and renders a provider-independent `AnalysisResult` contract that can also serve future `/bazin` and `/dcf` flows.
 
 ## Current status
 
@@ -10,15 +10,19 @@ Implemented:
 - guild-scoped slash command registration script
 - `/graham` slash command
 - Graham valuation in the domain layer
-- provider factory with `local` and `api` options
+- provider factory with `local` and `api` options kept for the legacy company-provider path
 - local JSON provider with sample company data
 - BRAPI integration for real quote and fundamentals data
+- BolsAI Graham provider for production `/graham`
+- shared `AnalysisResult` contract
+- shared Discord analysis embed renderer
+- `PermissionGuard` for command access control
 
 Not implemented:
 
 - `/bazin`
 - `/fcd`
-- cache
+- production TTL cache for Graham inputs
 - retry
 - rate limiter
 - database
@@ -34,7 +38,7 @@ Current project version: `0.1.0`
 
 ## Provider configuration
 
-The active company provider is selected centrally through the environment:
+The legacy company provider remains selected centrally through the environment:
 
 ```env
 PROVIDER=local
@@ -45,12 +49,16 @@ Supported values:
 - `local`
 - `api`
 
-Current behavior:
+Legacy behavior:
 
 - `PROVIDER=local`: uses `LocalCompanyProvider` and reads from `data/companies.json`
 - `PROVIDER=api`: uses `ApiCompanyProvider` and fetches real data from BRAPI
 
-No service, command or valuation rule needs to change when switching providers.
+Production `/graham` no longer uses BRAPI or this provider switch. It uses `BOLSAI_API_KEY` through the BolsAI Graham provider and calls only:
+
+```text
+GET https://api.usebolsai.com/api/v1/fundamentals/{ticker}
+```
 
 ## BRAPI authentication
 
@@ -74,6 +82,8 @@ Security rules in this project:
 - the key is never documented with a real value
 
 ## BRAPI integration
+
+BRAPI remains in the repository for the legacy provider architecture and tests. It is not used by the production `/graham` flow.
 
 This project uses only official BRAPI endpoints for Graham:
 
@@ -106,15 +116,18 @@ Relevant variables:
 
 - `PROVIDER`
 - `BRAPI_API_KEY`
+- `BOLSAI_API_KEY`
 - `DISCORD_TOKEN`
 - `DISCORD_CLIENT_ID`
 - `DISCORD_GUILD_ID`
+- `DISCORD_OWNER_ROLE_NAME`
 
 Notes:
 
 - `DISCORD_TOKEN` is required for startup
 - `DISCORD_CLIENT_ID` and `DISCORD_GUILD_ID` are required for `npm run register:commands`
-- `BRAPI_API_KEY` is required for `PROVIDER=api`
+- `BOLSAI_API_KEY` is required for production `/graham`
+- `DISCORD_OWNER_ROLE_NAME` defaults to `DONO`
 
 ## Installation
 
@@ -156,17 +169,20 @@ With a valid `.env`, DINHO will:
 The command:
 
 - normalizes the ticker through the shared utility
-- uses the existing `calculateGrahamValuationByTicker` service
-- calls the active provider only through `getCompanyByTicker()`
-- formats the domain result for Discord in `pt-BR`
+- accepts examples such as `PETR4`, `PETR4F` and `petr4`
+- checks access through `PermissionGuard`
+- uses `analyzeGrahamByTicker`
+- calls only the BolsAI fundamentals endpoint
+- returns an `AnalysisResult`
+- renders through the shared `AnalysisEmbedRenderer`
 
 ## Graham method
 
 Formula:
 
 ```text
-fairValue = sqrt(grahamMultiplier * EPS * BVPS)
-marginOfSafety = ((fairValue - currentPrice) / currentPrice) * 100
+fairPrice = sqrt(22.5 * LPA * VPA)
+marginOfSafety = ((fairPrice - currentPrice) / fairPrice) * 100
 ```
 
 Current assumptions:
@@ -174,11 +190,15 @@ Current assumptions:
 - `grahamMultiplier = 22.5`
 - `fairValueTolerancePercentage = 5`
 
-Status mapping in the Discord presentation layer:
+Status mapping:
 
 - `UNDERVALUED` -> `Aparentemente abaixo do preco justo`
-- `FAIRLY_VALUED` -> `Proxima do preco justo`
+- `FAIR_VALUE` -> `Proxima do preco justo`
 - `OVERVALUED` -> `Aparentemente acima do preco justo`
+- `NOT_APPLICABLE` -> `Graham nao aplicavel`
+- `ERROR` -> `Erro`
+
+When LPA or VPA are equal to or below zero, DINHO returns `NOT_APPLICABLE` and does not calculate a square root or artificial fair price.
 
 The result is an informative mathematical estimate and does not constitute investment advice.
 
@@ -247,9 +267,12 @@ npm start
 
 - `src/commands`: slash command definition and execution layer
 - `src/discord`: Discord client creation, interaction routing, formatters and command registry
-- `src/services`: orchestration between ticker, provider and valuation method
+- `src/analysis`: provider-independent analysis contract, statuses and method calculations
+- `src/services`: orchestration between ticker, provider and analysis method
 - `src/providers`: company data source abstraction, factory, BRAPI client and concrete providers
 - `src/valuation`: pure domain logic for Graham
+- `src/permissions`: command access guards
+- `src/cache`: shared TTL cache
 
 The financial formula remains outside the Discord layer, and the provider layer can be swapped through configuration only.
 
@@ -257,19 +280,18 @@ The financial formula remains outside the Discord layer, and the provider layer 
 
 Current user-facing messages:
 
-- invalid ticker: `Informe um ticker valido, como PETR4.`
+- invalid ticker: `Ticker inválido.`
 - missing ticker data: `Nao encontrei dados para o ticker informado.`
-- insufficient data: `Nao ha dados suficientes para calcular Graham para este ticker.`
+- insufficient data: `Dados ausentes para concluir a analise deste ticker.`
+- restricted command: `Este comando ainda esta em fase de testes.`
 - provider auth or configuration issue: `O provedor de dados nao esta disponivel corretamente no momento.`
-- temporary API issue: `A BRAPI esta indisponivel no momento. Tente novamente em instantes.`
-- unexpected issue: `Nao foi possivel concluir o calculo agora.`
+- temporary API issue: `A fonte de dados esta indisponivel no momento. Tente novamente em instantes.`
+- unexpected issue: `Nao foi possivel concluir a analise agora.`
 
 Infrastructure-level provider errors are converted to semantic project errors before reaching the rest of the application.
 
 ## Current limitations
 
 - only Graham is implemented
-- BRAPI integration does not include cache, retry or rate limiting
-- BRAPI coverage still depends on the authenticated plan behind `BRAPI_API_KEY`
 - Bazin and FCD are not implemented
 - commands are registered only at guild scope

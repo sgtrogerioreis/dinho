@@ -4,19 +4,22 @@ const { Events } = require('discord.js');
 const config = require('./config');
 const { createCommandRegistry } = require('./discord/commandRegistry');
 const { createDiscordClient } = require('./discord/createClient');
-const { formatGrahamResponse } = require('./discord/formatters/grahamResponse');
+const { AnalysisEmbedRenderer } = require('./discord/renderers/analysisEmbedRenderer');
 const { createInteractionHandler } = require('./discord/handleInteraction');
-const { createCompanyProvider } = require('./providers');
-const { calculateGrahamValuationByTicker } = require('./services');
+const { PermissionGuard } = require('./permissions/permissionGuard');
+const { BolsaiGrahamProvider } = require('./providers/bolsai');
+const { analyzeGrahamByTicker } = require('./services');
 const { serializeError } = require('./utils/errorDetails');
 
 async function bootstrap() {
   const discordConfig = config.discord.getDiscordRuntimeConfig();
-  const provider = createCompanyProvider(config.app.companyProvider);
+  const grahamProvider = new BolsaiGrahamProvider(config.app.companyProvider.bolsai);
   const commandRegistry = createCommandRegistry({
-    calculateGrahamValuationByTicker,
-    companyProvider: provider,
-    formatGrahamResponse,
+    analysisRenderer: new AnalysisEmbedRenderer(),
+    analyzeGrahamByTicker,
+    grahamProvider,
+    permissionGuard: new PermissionGuard(config.app.permissions),
+    logger: console,
   });
   const client = createDiscordClient();
   const handleInteraction = createInteractionHandler(commandRegistry);

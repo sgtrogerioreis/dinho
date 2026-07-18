@@ -1,5 +1,6 @@
 const { SlashCommandBuilder } = require('discord.js');
 const { ConfigurationError } = require('../errors/configurationError');
+const { PermissionDeniedError } = require('../errors/permissionDeniedError');
 
 const grahamCommandData = new SlashCommandBuilder()
   .setName('graham')
@@ -17,13 +18,29 @@ function createGrahamCommand(dependencies) {
   return {
     data: grahamCommandData,
     async execute(interaction) {
+      const startedAt = Date.now();
       const ticker = interaction.options.getString('ticker', true);
-      const valuationResult = await dependencies.calculateGrahamValuationByTicker(
+
+      if (!dependencies.permissionGuard.canRunAnalysis(interaction)) {
+        throw new PermissionDeniedError(
+          'Graham command is restricted during production validation.',
+        );
+      }
+
+      const analysisResult = await dependencies.analyzeGrahamByTicker(
         ticker,
-        dependencies.companyProvider,
+        dependencies.grahamProvider,
       );
 
-      return dependencies.formatGrahamResponse(valuationResult);
+      dependencies.logger.info('[analysis] graham command executed.', {
+        user: readUserId(interaction),
+        ticker: analysisResult.ticker,
+        elapsedMs: Date.now() - startedAt,
+        apiDurationMs: analysisResult.metadata.apiDurationMs ?? null,
+        result: analysisResult.status,
+      });
+
+      return dependencies.analysisRenderer.render(analysisResult);
     },
   };
 }
@@ -33,20 +50,36 @@ function validateDependencies(dependencies) {
     throw new ConfigurationError('Graham command dependencies are required.');
   }
 
-  if (typeof dependencies.calculateGrahamValuationByTicker !== 'function') {
-    throw new ConfigurationError('Graham command requires calculateGrahamValuationByTicker.');
+  if (typeof dependencies.analyzeGrahamByTicker !== 'function') {
+    throw new ConfigurationError('Graham command requires analyzeGrahamByTicker.');
   }
 
   if (
-    !dependencies.companyProvider ||
-    typeof dependencies.companyProvider.getCompanyByTicker !== 'function'
+    !dependencies.grahamProvider ||
+    typeof dependencies.grahamProvider.getGrahamInputsByTicker !== 'function'
   ) {
-    throw new ConfigurationError('Graham command requires a valid company provider.');
+    throw new ConfigurationError('Graham command requires a valid Graham provider.');
   }
 
-  if (typeof dependencies.formatGrahamResponse !== 'function') {
-    throw new ConfigurationError('Graham command requires formatGrahamResponse.');
+  if (
+    !dependencies.analysisRenderer ||
+    typeof dependencies.analysisRenderer.render !== 'function'
+  ) {
+    throw new ConfigurationError('Graham command requires an analysis renderer.');
   }
+
+  if (
+    !dependencies.permissionGuard ||
+    typeof dependencies.permissionGuard.canRunAnalysis !== 'function'
+  ) {
+    throw new ConfigurationError('Graham command requires a permission guard.');
+  }
+
+  dependencies.logger = dependencies.logger || console;
+}
+
+function readUserId(interaction) {
+  return interaction && interaction.user ? interaction.user.id : null;
 }
 
 module.exports = {

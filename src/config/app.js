@@ -11,6 +11,15 @@ const appConfig = Object.freeze({
       apiKey: readOptionalEnvironmentVariable('BRAPI_API_KEY'),
       timeoutMs: 10000,
     }),
+    bolsai: Object.freeze({
+      baseUrl: 'https://api.usebolsai.com/api/v1',
+      apiKey: readOptionalEnvironmentVariable('BOLSAI_API_KEY'),
+      timeoutMs: 10000,
+      cacheTtlMs: 5 * 60 * 1000,
+    }),
+  }),
+  permissions: Object.freeze({
+    ownerRoleName: process.env.DISCORD_OWNER_ROLE_NAME || 'DONO',
   }),
 });
 

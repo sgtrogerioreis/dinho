@@ -1,6 +1,7 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
 
+const { PermissionDeniedError } = require('../../src/errors/permissionDeniedError');
 const { createGrahamCommand, grahamCommandData } = require('../../src/commands/graham');
 
 test('graham command definition has the correct name, description and ticker option', () => {
@@ -15,44 +16,80 @@ test('graham command definition has the correct name, description and ticker opt
   assert.equal(payload.options[0].type, 3);
 });
 
-test('graham command reads the ticker, calls the service once and returns the formatted response', async () => {
+test('graham command checks permission, calls analysis service and renders the result', async () => {
   const calls = [];
+  const analysisResult = { method: 'GRAHAM', ticker: 'PETR4', status: 'UNDERVALUED', metadata: {} };
+  const rendered = { embeds: ['embed'] };
   const provider = {
-    async getCompanyByTicker() {
-      return null;
-    },
+    async getGrahamInputsByTicker() {},
   };
-  const valuationResult = { method: 'GRAHAM' };
-  const formattedResponse = { content: 'formatted' };
   const command = createGrahamCommand({
-    calculateGrahamValuationByTicker: async (ticker, receivedProvider) => {
+    analyzeGrahamByTicker: async (ticker, receivedProvider) => {
       calls.push({ ticker, receivedProvider });
-      return valuationResult;
+      return analysisResult;
     },
-    companyProvider: provider,
-    formatGrahamResponse: (result) => {
-      calls.push({ formattedResult: result });
-      return formattedResponse;
+    grahamProvider: provider,
+    analysisRenderer: {
+      render(result) {
+        calls.push({ renderedResult: result });
+        return rendered;
+      },
+    },
+    permissionGuard: {
+      canRunAnalysis() {
+        calls.push({ permissionChecked: true });
+        return true;
+      },
+    },
+    logger: {
+      info(message, details) {
+        calls.push({ logMessage: message, logDetails: details });
+      },
     },
   });
 
-  const interaction = createFakeInteraction('PETR4');
-  const response = await command.execute(interaction);
+  const response = await command.execute(createFakeInteraction('petr4'));
 
-  assert.deepEqual(calls, [
-    {
-      ticker: 'PETR4',
-      receivedProvider: provider,
-    },
-    {
-      formattedResult: valuationResult,
-    },
+  assert.equal(response, rendered);
+  assert.deepEqual(calls.slice(0, 2), [
+    { permissionChecked: true },
+    { ticker: 'petr4', receivedProvider: provider },
   ]);
-  assert.equal(response, formattedResponse);
+  assert.equal(calls[2].logDetails.ticker, 'PETR4');
+  assert.equal(calls[2].logDetails.result, 'UNDERVALUED');
+  assert.deepEqual(calls[3], { renderedResult: analysisResult });
+});
+
+test('graham command rejects users without permission', async () => {
+  const command = createGrahamCommand({
+    analyzeGrahamByTicker: async () => {
+      throw new Error('should not run');
+    },
+    grahamProvider: {
+      async getGrahamInputsByTicker() {},
+    },
+    analysisRenderer: {
+      render() {
+        return {};
+      },
+    },
+    permissionGuard: {
+      canRunAnalysis() {
+        return false;
+      },
+    },
+    logger: { info() {} },
+  });
+
+  await assert.rejects(
+    () => command.execute(createFakeInteraction('PETR4')),
+    PermissionDeniedError,
+  );
 });
 
 function createFakeInteraction(ticker) {
   return {
+    user: { id: 'user-1' },
     options: {
       getString(optionName, isRequired) {
         assert.equal(optionName, 'ticker');

@@ -1,6 +1,6 @@
 const { InvalidTickerError } = require('../errors/invalidTickerError');
 
-const B3_TICKER_PATTERN = /^[A-Z]{4}\d{1,2}$/;
+const B3_TICKER_PATTERN = /^[A-Z]{4}\d{1,2}F?$/;
 
 function normalizeTicker(ticker) {
   if (typeof ticker !== 'string' || ticker.trim() === '') {
