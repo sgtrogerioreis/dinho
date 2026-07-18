@@ -31,8 +31,8 @@ test('graham command checks permission, calls analysis service and renders the r
     },
     grahamProvider: provider,
     analysisRenderer: {
-      render(result) {
-        calls.push({ renderedResult: result });
+      render(result, options) {
+        calls.push({ renderedResult: result, renderOptions: options });
         return rendered;
       },
     },
@@ -47,6 +47,9 @@ test('graham command checks permission, calls analysis service and renders the r
         calls.push({ logMessage: message, logDetails: details });
       },
     },
+    now() {
+      return new Date('2026-07-18T17:01:00.000Z');
+    },
   });
 
   const response = await command.execute(createFakeInteraction('petr4'));
@@ -58,7 +61,55 @@ test('graham command checks permission, calls analysis service and renders the r
   ]);
   assert.equal(calls[2].logDetails.ticker, 'PETR4');
   assert.equal(calls[2].logDetails.result, 'UNDERVALUED');
-  assert.deepEqual(calls[3], { renderedResult: analysisResult });
+  assert.deepEqual(calls[3], {
+    renderedResult: analysisResult,
+    renderOptions: {
+      consultedAt: new Date('2026-07-18T17:01:00.000Z'),
+    },
+  });
+});
+
+test('graham command generates a fresh consultation timestamp for cached results', async () => {
+  const analysisResult = { method: 'GRAHAM', ticker: 'PETR4', status: 'UNDERVALUED', metadata: {} };
+  const consultedAtValues = [
+    new Date('2026-07-18T17:01:00.000Z'),
+    new Date('2026-07-18T17:02:00.000Z'),
+  ];
+  const renderedConsultations = [];
+  let analysisCalls = 0;
+  const command = createGrahamCommand({
+    analyzeGrahamByTicker: async () => {
+      analysisCalls += 1;
+      return analysisResult;
+    },
+    grahamProvider: {
+      async getGrahamInputsByTicker() {},
+    },
+    analysisRenderer: {
+      render(_result, options) {
+        renderedConsultations.push(options.consultedAt);
+        return { embeds: [] };
+      },
+    },
+    permissionGuard: {
+      canRunAnalysis() {
+        return true;
+      },
+    },
+    logger: { info() {} },
+    now() {
+      return consultedAtValues.shift();
+    },
+  });
+
+  await command.execute(createFakeInteraction('PETR4'));
+  await command.execute(createFakeInteraction('PETR4'));
+
+  assert.equal(analysisCalls, 2);
+  assert.deepEqual(renderedConsultations, [
+    new Date('2026-07-18T17:01:00.000Z'),
+    new Date('2026-07-18T17:02:00.000Z'),
+  ]);
 });
 
 test('graham command rejects users without permission', async () => {

@@ -33,7 +33,9 @@ function createGrahamCommand(dependencies) {
         result: analysisResult.status,
       });
 
-      return dependencies.analysisRenderer.render(analysisResult);
+      return dependencies.analysisRenderer.render(analysisResult, {
+        consultedAt: dependencies.now(),
+      });
     },
   };
 }
@@ -69,6 +71,7 @@ function validateDependencies(dependencies) {
   }
 
   dependencies.logger = dependencies.logger || console;
+  dependencies.now = dependencies.now || (() => new Date());
 }
 
 function readUserId(interaction) {

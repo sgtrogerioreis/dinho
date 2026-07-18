@@ -53,6 +53,12 @@ Shared statuses live in `src/analysis/analysisStatus.js`:
 - `reference_date` -> `referenceDate`
 - `corporate_name` -> `companyName`
 
+`close_price` is the price returned by `/fundamentals/{ticker}`. The command does not call an
+additional quote endpoint, so it does not display a quote trade date.
+
+`reference_date` is the fundamentals balance-sheet reference date used for LPA/VPA and is displayed
+as `Data-base dos Fundamentos`.
+
 The provider uses `BOLSAI_API_KEY` only through the `X-API-Key` header. The key is never logged.
 
 ## Cache
@@ -60,6 +66,10 @@ The provider uses `BOLSAI_API_KEY` only through the `X-API-Key` header. The key 
 The production provider uses `TtlCache` from `src/cache/ttlCache.js`.
 
 The cache key is scoped to Graham and ticker, and the TTL is configured through `app.companyProvider.bolsai.cacheTtlMs`.
+
+The cache stores only Graham input data. It does not store the Discord presentation timestamp, so
+`Consultado em` always reflects the moment the user executed the command, even when Graham inputs
+come from cache.
 
 ## PermissionGuard
 
@@ -79,8 +89,12 @@ Current Graham embed:
 
 - title: `Benjamin Graham`
 - description: `Analise de preco justo.`
-- fields: company, ticker, current price, Graham price, margin of safety, LPA, VPA, status, quote date and data source
+- fields: company, ticker, current price, Graham price, margin of safety, LPA, VPA, status,
+  fundamentals reference date, consultation timestamp and data source
 - footer: `Dados fornecidos por BolsAI.`
+
+`Consultado em` is generated at command execution time and formatted in the `America/Sao_Paulo`
+timezone as `DD/MM/AAAA às HH:mm`.
 
 The same renderer is intended for `/bazin` and `/dcf`.
 

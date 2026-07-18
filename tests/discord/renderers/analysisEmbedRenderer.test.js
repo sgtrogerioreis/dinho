@@ -6,6 +6,8 @@ const { AnalysisResult } = require('../../../src/analysis/analysisResult');
 const {
   AnalysisEmbedRenderer,
   STATUS_COLORS,
+  formatConsultedAt,
+  formatReferenceDate,
 } = require('../../../src/discord/renderers/analysisEmbedRenderer');
 
 test('AnalysisEmbedRenderer renders a Graham analysis result', () => {
@@ -25,7 +27,11 @@ test('AnalysisEmbedRenderer renders a Graham analysis result', () => {
     },
   });
 
-  const embed = new AnalysisEmbedRenderer().render(result).embeds[0].toJSON();
+  const embed = new AnalysisEmbedRenderer()
+    .render(result, {
+      consultedAt: new Date('2026-07-18T17:01:00.000Z'),
+    })
+    .embeds[0].toJSON();
 
   assert.equal(embed.title, 'Benjamin Graham');
   assert.equal(embed.description, 'Analise de preco justo.');
@@ -34,6 +40,18 @@ test('AnalysisEmbedRenderer renders a Graham analysis result', () => {
   assert.equal(
     embed.fields.some((field) => field.name === 'Fonte dos Dados' && field.value === 'BolsAI'),
     true,
+  );
+  assert.equal(
+    embed.fields.find((field) => field.name === 'Data-base dos Fundamentos').value,
+    '17/07/2026',
+  );
+  assert.equal(
+    embed.fields.find((field) => field.name === 'Consultado em').value,
+    '18/07/2026 às 14:01',
+  );
+  assert.equal(
+    embed.fields.some((field) => field.name === 'Data da Cotacao'),
+    false,
   );
 });
 
@@ -56,4 +74,9 @@ test('AnalysisEmbedRenderer renders NOT_APPLICABLE without fair price', () => {
   assert.match(embed.description, /Graham nao aplicavel/);
   assert.equal(embed.color, STATUS_COLORS.NOT_APPLICABLE);
   assert.equal(embed.fields.find((field) => field.name === 'Preco Graham').value, 'Nao aplicavel');
+});
+
+test('AnalysisEmbedRenderer formats reference and consultation dates', () => {
+  assert.equal(formatReferenceDate('2026-03-31'), '31/03/2026');
+  assert.equal(formatConsultedAt(new Date('2026-07-18T17:01:00.000Z')), '18/07/2026 às 14:01');
 });

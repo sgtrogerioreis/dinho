@@ -30,7 +30,8 @@ const STATUS_COLORS = Object.freeze({
 });
 
 class AnalysisEmbedRenderer {
-  render(result) {
+  render(result, options = {}) {
+    const consultedAt = options.consultedAt || new Date();
     const embed = new EmbedBuilder()
       .setTitle(resolveTitle(result.method))
       .setDescription(resolveDescription(result))
@@ -77,8 +78,13 @@ class AnalysisEmbedRenderer {
           inline: false,
         },
         {
-          name: 'Data da Cotacao',
-          value: result.referenceDate || 'Nao informada',
+          name: 'Data-base dos Fundamentos',
+          value: formatReferenceDate(result.referenceDate),
+          inline: true,
+        },
+        {
+          name: 'Consultado em',
+          value: formatConsultedAt(consultedAt),
           inline: true,
         },
         {
@@ -137,12 +143,55 @@ function formatNumber(value) {
   return Number.isFinite(Number(value)) ? PERCENTAGE_FORMATTER.format(value) : 'Nao informado';
 }
 
+function formatReferenceDate(value) {
+  if (!value || typeof value !== 'string') {
+    return 'Nao informada';
+  }
+
+  const [year, month, day] = value.split('-');
+
+  if (!year || !month || !day) {
+    return value;
+  }
+
+  return `${day}/${month}/${year}`;
+}
+
+function formatConsultedAt(value) {
+  const date = value instanceof Date ? value : new Date(value);
+
+  if (Number.isNaN(date.getTime())) {
+    return 'Nao informado';
+  }
+
+  const parts = new Intl.DateTimeFormat('pt-BR', {
+    timeZone: 'America/Sao_Paulo',
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: false,
+  }).formatToParts(date);
+
+  return `${readPart(parts, 'day')}/${readPart(parts, 'month')}/${readPart(
+    parts,
+    'year',
+  )} às ${readPart(parts, 'hour')}:${readPart(parts, 'minute')}`;
+}
+
+function readPart(parts, type) {
+  return parts.find((part) => part.type === type)?.value || '';
+}
+
 module.exports = {
   AnalysisEmbedRenderer,
   STATUS_COLORS,
   STATUS_LABELS,
+  formatConsultedAt,
   formatCurrency,
   formatNullableCurrency,
   formatNullablePercentage,
   formatNumber,
+  formatReferenceDate,
 };
