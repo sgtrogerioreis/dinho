@@ -97,7 +97,7 @@ function buildFields(result, consultedAt) {
     },
     {
       name: formatStatusTitle(result),
-      value: bold(formatStatus(result)),
+      value: underline(bold(formatStatus(result))),
       inline: true,
     },
     SPACER_FIELD,
@@ -127,7 +127,6 @@ function buildFields(result, consultedAt) {
       value: formatNullableCurrency(result.fairPrice),
       inline: true,
     },
-    SPACER_FIELD,
     {
       name: '🔎 Confiabilidade dos Dados',
       value: formatDataReliability(result),
@@ -159,10 +158,10 @@ function resolveTitle(method) {
 
 function resolveDescription(result) {
   if (result.status === ANALYSIS_STATUS.NOT_APPLICABLE) {
-    return 'Preço justo baseado na metodologia clássica de Benjamin Graham.';
+    return italic('Preço justo baseado na metodologia clássica de Benjamin Graham.');
   }
 
-  return 'Preço justo baseado na metodologia clássica de Benjamin Graham.';
+  return italic('Preço justo baseado na metodologia clássica de Benjamin Graham.');
 }
 
 function formatStatus(result) {
@@ -267,10 +266,10 @@ function formatDataReliability(result) {
 
 function formatDataReference(result, consultedAt) {
   return [
-    `Preço: ${formatCurrency(result.currentPrice)}`,
-    `Fundamentos: ${formatReferenceDate(result.referenceDate)}`,
-    `Consulta: ${formatConsultedAt(consultedAt)}`,
-    `Fonte: ${result.provider || 'Nao informada'}`,
+    `Preço: ${formatCurrency(result.currentPrice)} | Fundamentos: ${formatReferenceDate(
+      result.referenceDate,
+    )}`,
+    `Consulta: ${formatConsultedAt(consultedAt)} | Fonte: ${result.provider || 'Nao informada'}`,
   ].join('\n');
 }
 
@@ -314,6 +313,14 @@ function resolveKnownCompanyName(value) {
 
 function bold(value) {
   return `**${value}**`;
+}
+
+function italic(value) {
+  return `*${value}*`;
+}
+
+function underline(value) {
+  return `__${value}__`;
 }
 
 function formatReferenceDate(value) {

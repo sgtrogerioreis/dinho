@@ -39,7 +39,7 @@ test('AnalysisEmbedRenderer renders UNDERVALUED as a release-candidate Graham re
   assert.equal(embed.title, '🧮 Benjamin Graham');
   assert.equal(
     embed.description,
-    'Preço justo baseado na metodologia clássica de Benjamin Graham.',
+    '*Preço justo baseado na metodologia clássica de Benjamin Graham.*',
   );
   assert.equal(embed.color, STATUS_COLORS.UNDERVALUED);
   assert.deepEqual(
@@ -57,7 +57,6 @@ test('AnalysisEmbedRenderer renders UNDERVALUED as a release-candidate Graham re
       '📊 LPA',
       '🏦 VPA',
       '💎 Preço Graham',
-      '​',
       '🔎 Confiabilidade dos Dados',
       '📅 Dados Utilizados',
     ],
@@ -66,7 +65,7 @@ test('AnalysisEmbedRenderer renders UNDERVALUED as a release-candidate Graham re
   assert.equal(field(embed, '💰 Preço Atual').value, `**R$\u00a040,90**`);
   assert.equal(field(embed, '🎯 Preço Justo').value, `**R$\u00a080,56**`);
   assert.equal(field(embed, '📈 Potencial').value, '🟢 **+96,96%**');
-  assert.equal(field(embed, '🟢 Status').value, '**🟢 SUBAVALIADA**');
+  assert.equal(field(embed, '🟢 Status').value, '__**🟢 SUBAVALIADA**__');
   assert.equal(
     field(embed, 'Resumo Executivo').value,
     '🟢 A ação negocia abaixo do preço justo calculado por Graham.',
@@ -82,10 +81,8 @@ test('AnalysisEmbedRenderer renders UNDERVALUED as a release-candidate Graham re
   assert.equal(
     field(embed, '📅 Dados Utilizados').value,
     [
-      `Preço: R$\u00a040,90`,
-      'Fundamentos: 31/03/2026',
-      'Consulta: 18/07/2026 às 14:26',
-      'Fonte: BolsAI',
+      `Preço: R$\u00a040,90 | Fundamentos: 31/03/2026`,
+      'Consulta: 18/07/2026 às 14:26 | Fonte: BolsAI',
     ].join('\n'),
   );
   assert.equal(
@@ -115,7 +112,7 @@ test('AnalysisEmbedRenderer renders OVERVALUED with visual status and negative p
 
   assert.equal(embed.color, STATUS_COLORS.OVERVALUED);
   assert.equal(field(embed, '📈 Potencial').value, '🔴 **-72,61%**');
-  assert.equal(field(embed, '🔴 Status').value, '**🔴 SOBREAVALIADA**');
+  assert.equal(field(embed, '🔴 Status').value, '__**🔴 SOBREAVALIADA**__');
   assert.equal(
     field(embed, 'Resumo Executivo').value,
     '🔴 A ação negocia acima do preço justo calculado por Graham.',
@@ -143,7 +140,7 @@ test('AnalysisEmbedRenderer renders FAIR_VALUE with neutral visual status', () =
 
   assert.equal(embed.color, STATUS_COLORS.FAIR_VALUE);
   assert.equal(field(embed, '📈 Potencial').value, '🟢 **+2,00%**');
-  assert.equal(field(embed, '🟡 Status').value, '**🟡 PREÇO JUSTO**');
+  assert.equal(field(embed, '🟡 Status').value, '__**🟡 PREÇO JUSTO**__');
   assert.equal(
     field(embed, 'Resumo Executivo').value,
     '🟡 A ação negocia próxima do preço justo calculado por Graham.',
@@ -172,7 +169,7 @@ test('AnalysisEmbedRenderer renders NOT_APPLICABLE without financial projections
   assert.equal(embed.color, STATUS_COLORS.NOT_APPLICABLE);
   assert.equal(field(embed, '🎯 Preço Justo').value, '**—**');
   assert.equal(field(embed, '📈 Potencial').value, '**—**');
-  assert.equal(field(embed, '⚪ Status').value, '**⚪ NÃO APLICÁVEL**');
+  assert.equal(field(embed, '⚪ Status').value, '__**⚪ NÃO APLICÁVEL**__');
   assert.equal(
     field(embed, 'Resumo Executivo').value,
     '⚪ O método Graham não é aplicável devido aos fundamentos atuais.',
