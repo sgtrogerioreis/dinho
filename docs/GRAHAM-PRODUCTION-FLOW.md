@@ -65,7 +65,9 @@ The cache key is scoped to Graham and ticker, and the TTL is configured through 
 
 `src/permissions/permissionGuard.js` centralizes command permission checks.
 
-In this sprint, only members with the configured owner role name, default `DONO`, can execute `/graham`.
+In this sprint, only members with the configured owner role can execute `/graham`.
+
+Production should use `OWNER_ROLE_ID`. The `DISCORD_OWNER_ROLE_NAME` fallback exists for local compatibility and defaults to `DONO` when no role ID is configured.
 
 The command does not hardcode role logic.
 

@@ -192,7 +192,7 @@ This keeps the rest of the application independent from raw HTTP or BRAPI-specif
 - The standardized valuation result is immutable and interface-agnostic.
 - The standardized analysis result is immutable and interface-agnostic.
 - The Discord embed renderer consumes `AnalysisResult` so future Bazin and DCF commands do not need duplicate embed code.
-- Permission checks live in `PermissionGuard`, not inside reusable analysis or provider layers.
+- Permission checks live in `PermissionGuard`, not inside reusable analysis or provider layers. Production access should be configured through `OWNER_ROLE_ID`.
 - The Discord layer only formats and routes interactions; it does not implement valuation formulas.
 - Slash command registration is isolated in `scripts/register-commands.js` and does not run during startup.
 

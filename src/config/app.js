@@ -19,6 +19,7 @@ const appConfig = Object.freeze({
     }),
   }),
   permissions: Object.freeze({
+    ownerRoleId: readOptionalEnvironmentVariable('OWNER_ROLE_ID'),
     ownerRoleName: process.env.DISCORD_OWNER_ROLE_NAME || 'DONO',
   }),
 });

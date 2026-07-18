@@ -120,6 +120,7 @@ Relevant variables:
 - `DISCORD_TOKEN`
 - `DISCORD_CLIENT_ID`
 - `DISCORD_GUILD_ID`
+- `OWNER_ROLE_ID`
 - `DISCORD_OWNER_ROLE_NAME`
 
 Notes:
@@ -127,7 +128,8 @@ Notes:
 - `DISCORD_TOKEN` is required for startup
 - `DISCORD_CLIENT_ID` and `DISCORD_GUILD_ID` are required for `npm run register:commands`
 - `BOLSAI_API_KEY` is required for production `/graham`
-- `DISCORD_OWNER_ROLE_NAME` defaults to `DONO`
+- `OWNER_ROLE_ID` is recommended for production access control
+- `DISCORD_OWNER_ROLE_NAME` defaults to `DONO` only when `OWNER_ROLE_ID` is not configured
 
 ## Installation
 
