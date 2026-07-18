@@ -14,10 +14,10 @@ const PERCENTAGE_FORMATTER = new Intl.NumberFormat('pt-BR', {
 });
 
 const STATUS_LABELS = Object.freeze({
-  [ANALYSIS_STATUS.UNDERVALUED]: 'Abaixo do preco justo',
-  [ANALYSIS_STATUS.FAIR_VALUE]: 'Proximo do preco justo',
-  [ANALYSIS_STATUS.OVERVALUED]: 'Acima do preco justo',
-  [ANALYSIS_STATUS.NOT_APPLICABLE]: 'Graham nao aplicavel',
+  [ANALYSIS_STATUS.UNDERVALUED]: '🟢 Subavaliada',
+  [ANALYSIS_STATUS.FAIR_VALUE]: '🟡 Próxima do preço justo',
+  [ANALYSIS_STATUS.OVERVALUED]: '🔴 Acima do preço justo',
+  [ANALYSIS_STATUS.NOT_APPLICABLE]: '⚪ Graham não aplicável',
   [ANALYSIS_STATUS.ERROR]: 'Erro',
 });
 
@@ -38,38 +38,23 @@ class AnalysisEmbedRenderer {
       .setColor(STATUS_COLORS[result.status] || STATUS_COLORS[ANALYSIS_STATUS.ERROR])
       .addFields(
         {
-          name: 'Empresa',
-          value: result.companyName || 'Nao informada',
+          name: '🏢 Empresa',
+          value: `${formatCompanyName(result.companyName)}\n${result.ticker || 'Ticker nao informado'}`,
           inline: false,
         },
         {
-          name: 'Ticker',
-          value: result.ticker,
+          name: '💰 Preço Atual',
+          value: bold(formatCurrency(result.currentPrice)),
           inline: true,
         },
         {
-          name: 'Preco Atual',
-          value: formatCurrency(result.currentPrice),
-          inline: true,
-        },
-        {
-          name: 'Preco Graham',
+          name: '🎯 Preço Justo',
           value: formatNullableCurrency(result.fairPrice),
           inline: true,
         },
         {
-          name: 'Margem de Seguranca',
-          value: formatNullablePercentage(result.marginOfSafety),
-          inline: true,
-        },
-        {
-          name: 'LPA',
-          value: formatNumber(result.inputs.eps),
-          inline: true,
-        },
-        {
-          name: 'VPA',
-          value: formatNumber(result.inputs.bookValuePerShare),
+          name: '📈 Potencial',
+          value: formatPotential(result),
           inline: true,
         },
         {
@@ -78,23 +63,23 @@ class AnalysisEmbedRenderer {
           inline: false,
         },
         {
-          name: 'Data-base dos Fundamentos',
-          value: formatReferenceDate(result.referenceDate),
+          name: '📊 Indicadores',
+          value: formatIndicators(result),
           inline: true,
         },
         {
-          name: 'Consultado em',
-          value: formatConsultedAt(consultedAt),
+          name: '📅 Dados Utilizados',
+          value: formatDataReference(result, consultedAt),
           inline: true,
         },
         {
-          name: 'Fonte dos Dados',
-          value: result.provider || 'Nao informada',
-          inline: true,
+          name: 'Observacao',
+          value: formatObservation(result),
+          inline: false,
         },
       )
       .setFooter({
-        text: 'Dados fornecidos por BolsAI.',
+        text: 'O método Graham utiliza empresas com LPA e VPA positivos para estimar um preço justo teórico.',
       });
 
     return {
@@ -105,7 +90,7 @@ class AnalysisEmbedRenderer {
 
 function resolveTitle(method) {
   if (method === 'GRAHAM') {
-    return 'Benjamin Graham';
+    return '🧮 Benjamin Graham';
   }
 
   return method;
@@ -113,10 +98,10 @@ function resolveTitle(method) {
 
 function resolveDescription(result) {
   if (result.status === ANALYSIS_STATUS.NOT_APPLICABLE) {
-    return 'Analise de preco justo.\n\nGraham nao aplicavel.\nEmpresa apresenta LPA e/ou VPA nao positivos.\nA formula de Benjamin Graham nao deve ser utilizada nessas condicoes.';
+    return 'Avaliação de preço justo utilizando a metodologia clássica de Benjamin Graham.';
   }
 
-  return 'Analise de preco justo.';
+  return 'Avaliação de preço justo utilizando a metodologia clássica de Benjamin Graham.';
 }
 
 function formatStatus(result) {
@@ -130,17 +115,84 @@ function formatCurrency(value) {
 function formatNullableCurrency(value) {
   return value !== null && value !== undefined && Number.isFinite(Number(value))
     ? formatCurrency(value)
-    : 'Nao aplicavel';
+    : '—';
 }
 
 function formatNullablePercentage(value) {
   return value !== null && value !== undefined && Number.isFinite(Number(value))
     ? `${PERCENTAGE_FORMATTER.format(value)}%`
-    : 'Nao aplicavel';
+    : '—';
 }
 
 function formatNumber(value) {
   return Number.isFinite(Number(value)) ? PERCENTAGE_FORMATTER.format(value) : 'Nao informado';
+}
+
+function formatPotential(result) {
+  if (result.fairPrice === null || result.fairPrice === undefined) {
+    return '—';
+  }
+
+  const currentPrice = Number(result.currentPrice);
+  const fairPrice = Number(result.fairPrice);
+
+  if (!Number.isFinite(currentPrice) || currentPrice <= 0 || !Number.isFinite(fairPrice)) {
+    return '—';
+  }
+
+  const potential = ((fairPrice - currentPrice) / currentPrice) * 100;
+  const sign = potential > 0 ? '+' : '';
+  const icon = potential > 0 ? '🟢 ' : potential < 0 ? '🔴 ' : '🟡 ';
+
+  return `${icon}${sign}${formatPercentage(potential)}`;
+}
+
+function formatPercentage(value) {
+  return `${PERCENTAGE_FORMATTER.format(value)}%`;
+}
+
+function formatIndicators(result) {
+  return [
+    `LPA: ${formatNumber(result.inputs.eps)}`,
+    `VPA: ${formatNumber(result.inputs.bookValuePerShare)}`,
+    `Margem: ${formatNullablePercentage(result.marginOfSafety)}`,
+    `Graham: ${formatNullableCurrency(result.fairPrice)}`,
+  ].join('\n');
+}
+
+function formatDataReference(result, consultedAt) {
+  return [
+    `Preço: ${formatCurrency(result.currentPrice)}`,
+    `Fundamentos: ${formatReferenceDate(result.referenceDate)}`,
+    `Consulta: ${formatConsultedAt(consultedAt)}`,
+    `Fonte: ${result.provider || 'Nao informada'}`,
+  ].join('\n');
+}
+
+function formatObservation(result) {
+  if (result.status === ANALYSIS_STATUS.NOT_APPLICABLE) {
+    return 'Empresa apresenta LPA e/ou VPA não positivos.';
+  }
+
+  return 'Margem de segurança e potencial de valorização são indicadores diferentes.';
+}
+
+function formatCompanyName(value) {
+  if (!value) {
+    return 'Empresa não informada';
+  }
+
+  const normalized = value
+    .replace(/\s*S\.?A\.?.*$/i, '')
+    .replace(/\s+-\s+.*$/u, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+  return normalized || value;
+}
+
+function bold(value) {
+  return `**${value}**`;
 }
 
 function formatReferenceDate(value) {
@@ -193,5 +245,6 @@ module.exports = {
   formatNullableCurrency,
   formatNullablePercentage,
   formatNumber,
+  formatPotential,
   formatReferenceDate,
 };
